@@ -1,0 +1,34 @@
+$if clink           # begin clink-only section
+
+set colored-completion-prefix                       on
+set colored-stats                                   on
+set mark-symlinked-directories                      on
+set visible-stats                                   off
+set completion-auto-query-items                     on
+set history-point-at-end-of-anchored-search         on
+set menu-complete-wraparound                        off
+set search-ignore-case                              on
+
+# The following key bindings are for emacs mode.
+set keymap emacs
+
+"\e[27;8;72~":      clink-popup-show-help           # Alt-Ctrl-Shift-H
+
+# Completion key bindings.
+"\t":               old-menu-complete               # Tab
+"\e[Z":             old-menu-complete-backward      # Shift-Tab
+"\e[27;5;32~":      clink-select-complete           # Ctrl-Space
+
+# Some key bindings I got used to from 4Dos/4NT/Take Command.
+C-k:                add-history                     # Ctrl-K (replaces `kill-line`)
+"\e[A":             history-search-backward         # Up (replaces `previous-history`)
+"\e[B":             history-search-forward          # Down (replaces `next-history`)
+"\e[5~":            clink-popup-history             # PgUp (replaces `history-search-backward`)
+"\e[6~":                                            # PgDn (cleared because I redefined PgUp)
+
+# Some key bindings for interrogating the Readline configuration.
+"\C-x\C-f":         dump-functions                  # Ctrl-X, Ctrl-F
+"\C-x\C-m":         dump-macros                     # Ctrl-X, Ctrl-M
+"\C-x\C-v":         dump-variables                  # Ctrl-X, Ctrl-V
+
+$endif              # end clink-only section
