@@ -1,8 +1,9 @@
 @echo off
 
 @REM Aliases
-doskey ls      = dir /w $*
-doskey ll      = dir $*
+doskey dir     = dirx
+doskey ls      = dirx --icons -2 -v -h $*
+doskey ll      = dirx --icons -a $*
 doskey clear   = cls
 doskey cp      = copy $*
 doskey mv      = move $*
