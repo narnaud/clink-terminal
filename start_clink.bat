@@ -3,7 +3,7 @@
 @REM Aliases
 doskey dir     = dirx
 doskey ls      = dirx --icons -2 -v -h $*
-doskey ll      = dirx --icons -a $*
+doskey ll      = dirx --icons -a -og --string-sort $*
 doskey clear   = cls
 doskey cp      = copy $*
 doskey mv      = move $*
@@ -19,4 +19,5 @@ set PATH=%PATH%;%~dp0bin
 @REM Start clink
 set CLINK_INPUTRC=%~dp0
 set CLINK_PATH=%~dp03rdparty\clink-zoxide;%~dp03rdparty\clink-gizmos
+set DIRX_COLORS=di=36:di hi=37:.*=37;2:ex=32:sc=33:bu=33:cm=34;4:*.md=35:do=35
 clink inject --quiet
