@@ -6,12 +6,14 @@ doskey ll      = dir $*
 doskey clear   = cls
 doskey cp      = copy $*
 doskey mv      = move $*
-doskey rm      = del $*
 doskey e       = start %windir%\explorer.exe .
 
 if exist %~dp0user_aliases.bat (
     call %~dp0user_aliases.bat
 )
+
+@REM Add custom command path
+set PATH=%PATH%;%~dp0bin
 
 @REM Start clink
 set CLINK_INPUTRC=%~dp0
