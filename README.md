@@ -10,7 +10,7 @@ Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 
 Then you can install clink and some of the extensions:
 ```
-scoop install clink clink-completions clink-flex-prompt
+scoop install clink clink-completions
 ```
 
 ## Intergration in Terminal

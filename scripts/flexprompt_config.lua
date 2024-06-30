@@ -18,7 +18,7 @@ flexprompt.settings.powerline_font = true
 flexprompt.settings.right_frame = "round"
 flexprompt.settings.right_prompt = "{overtype}{exit}{duration}{time:format=%H:%M:%S}"
 flexprompt.settings.separators = "round"
-flexprompt.settings.spacing = "compact"
+flexprompt.settings.spacing = "sparse"
 flexprompt.settings.style = "classic"
 flexprompt.settings.symbols =
 {
