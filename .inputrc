@@ -15,7 +15,8 @@ set keymap emacs
 "\e[27;8;72~":      clink-popup-show-help           # Alt-Ctrl-Shift-H
 
 # Completion key bindings.
-"\t":               old-menu-complete               # Tab
+#"\t":               old-menu-complete               # Tab
+"\t":               clink-select-complete           # Tab
 "\e[Z":             old-menu-complete-backward      # Shift-Tab
 "\e[27;5;32~":      clink-select-complete           # Ctrl-Space
 
@@ -36,7 +37,8 @@ C-k:                add-history                     # Ctrl-K (replaces `kill-lin
 "\C-r":        "luafunc:fzf_history"        # Ctrl+R lists history entries; choose one to insert it.
 "\M-c":        "luafunc:fzf_directory"      # Alt+C lists subdirectories; choose one to 'cd /d' to it.
 "\M-b":        "luafunc:fzf_bindings"       # Alt+B lists key bindings; choose one to invoke it.
-"\t":          "luafunc:fzf_tab"            # Tab uses fzf to filter match completions, but only when preceded by '**' (recursive).
+# Enabling this key binding will break the normal behavior of the Tab key.
+#"\t":          "luafunc:fzf_tab"            # Tab uses fzf to filter match completions, but only when preceded by '**' (recursive).
 "\e[27;5;32~": "luafunc:fzf_complete_force" # Ctrl+Space uses fzf to filter match completions (and supports '**' for recursive).
 
 $endif              # end clink-only section
