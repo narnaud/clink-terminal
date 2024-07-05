@@ -21,7 +21,7 @@ if /i "%1"=="--help" (
     goto help
 )
 
-set USE_TOOLS=%*
+set USE_PROMPT=%*
 
 :parse
 if "%~1"=="" (
@@ -32,7 +32,7 @@ if "%~1"=="" (
 ::: Setup one tool
 :::============================================================================
 set __USE_TOOLS=""%1""
-call %~dp0use_internals\_use_setup_tool.cmd %1 %__USE_TOOLS_FILE%
+call %~dp0.uselib\_use_setup_tool.cmd %1 %__USE_TOOLS_FILE%
 shift /1
 goto parse
 
