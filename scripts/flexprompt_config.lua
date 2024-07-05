@@ -10,7 +10,7 @@ flexprompt.settings.flow = "concise"
 flexprompt.settings.frame_color = "darkest"
 flexprompt.settings.heads = "round"
 flexprompt.settings.left_frame = "round"
-flexprompt.settings.left_prompt = "{battery:levelicon:onlyicon}{histlabel}{cwd:type=smart}{git}"
+flexprompt.settings.left_prompt = "{battery:levelicon:onlyicon}{env:var=USE_TOOLS}{histlabel}{cwd:type=rootsmart}{git}"
 flexprompt.settings.lines = "one"
 flexprompt.settings.nerdfonts_version = 3
 flexprompt.settings.nerdfonts_width = 2
