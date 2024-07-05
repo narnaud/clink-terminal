@@ -10,6 +10,8 @@ setlocal enableDelayedExpansion
 
 for /f "delims==" %%a in ('jq -r ".[""%1""].path[]?" %2') do (
     if "%%a%" NEQ "" (
+        ::: Only set a path if it has not been set before
+        if "%PATH:%%a=%" == "%PATH%" (
             set "PATH=%%a;%PATH%"
         )
     )

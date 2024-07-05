@@ -30,8 +30,10 @@ if "%~1"=="" (
 
 :::============================================================================
 ::: Setup one tool
+::: Keep the defer scripts ran to avoid re-running them
 :::============================================================================
 set __USE_TOOLS=""%1""
+set __USE_DEFER_SCRIPT=
 call %~dp0.uselib\_use_setup_tool.cmd %1 %__USE_TOOLS_FILE%
 shift /1
 goto parse
@@ -57,3 +59,4 @@ echo   -l --list      Display the list of known tools.
 goto end
 
 :end
+set __USE_TOOLS=
