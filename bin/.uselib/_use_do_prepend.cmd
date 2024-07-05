@@ -10,9 +10,10 @@ setlocal enableDelayedExpansion
 
 for /f "tokens=1,2 delims==" %%a in ('jq -r ".[""%1""].prepend | try to_entries[] | join(""="")" %2') do (
     if "%%a%" NEQ "" (
+        ::: Only prepend a var if it has not been set before
         if "!%%a!"=="" (
             echo %%a=%%b
-        ) else (
+        ) else if "!%%a:%%b=!" == "!%%a" (
             echo %%a=%%b;!%%a!
         )
     )
