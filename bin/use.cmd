@@ -5,7 +5,6 @@
 set "__USE_TOOLS_FILE=%USERPROFILE%\.tools.json"
 
 :::============================================================================
-:parse
 ::: Parse command line arguments
 :::============================================================================
 
@@ -21,6 +20,10 @@ if /i "%1"=="-h" (
 if /i "%1"=="--help" (
     goto help
 )
+
+set USE_TOOLS=%*
+
+:parse
 if "%~1"=="" (
     goto end
 )
