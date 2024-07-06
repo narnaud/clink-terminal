@@ -28,6 +28,7 @@ doskey mariadb = mysql
 doskey fe      = %~dp0bin\fzf-explorer.cmd
 doskey fgf      = %~dp0bin\fzf-git-status.cmd
 doskey fgb      = %~dp0bin\fzf-git-branch.cmd
+doskey fgs      = %~dp0bin\fzf-git-stash.cmd
 
 :::============================================================================
 ::: Add custom command path
