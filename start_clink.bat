@@ -24,6 +24,9 @@ doskey qtc     = C:\Qt\Tools\QtCreator\bin\qtcreator.exe -client $*
 doskey xhost   = sudo code C:\Windows\System32\Drivers\etc\hosts
 doskey mariadb = mysql
 
+:: fzf aliases
+doskey fe      = %~dp0bin\fzf-explorer.cmd
+
 :::============================================================================
 ::: Add custom command path
 :::============================================================================
