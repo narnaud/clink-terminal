@@ -12,9 +12,9 @@ doskey more    = bat -p $*
 doskey e       = start %windir%\explorer.exe .
 
 ::: Git aliases
-doskey gl      = git log --graph --pretty=format:"%%Cred%%h%%Creset -%%C(yellow)%%d%%Creset %%s %%Cgreen(%%cr) %%C(bold blue)<%%an>%%Creset" --abbrev-commit --date=relative
-doskey gs      = git status $*
-doskey gd      = git diff $*
+doskey l      = git log --graph --pretty=format:"%%Cred%%h%%Creset -%%C(yellow)%%d%%Creset %%s %%Cgreen(%%cr) %%C(bold blue)<%%an>%%Creset" --abbrev-commit --date=relative
+doskey s      = git status $*
+doskey d      = git diff $*
 
 ::: Run some software from command line
 doskey np      = "C:\Program Files\Notepad++\notepad++.exe" $*
@@ -26,7 +26,8 @@ doskey mariadb = mysql
 
 :: fzf aliases
 doskey fe      = %~dp0bin\fzf-explorer.cmd
-doskey fgs      = %~dp0bin\fzf-git-status.cmd
+doskey fgf      = %~dp0bin\fzf-git-status.cmd
+doskey fgb      = %~dp0bin\fzf-git-branch.cmd
 
 :::============================================================================
 ::: Add custom command path
