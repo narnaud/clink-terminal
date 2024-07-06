@@ -1,8 +1,3 @@
--- WARNING:  This file gets overwritten by the 'flexprompt configure' wizard!
---
--- If you want to make changes, consider copying the file to
--- 'flexprompt_config.lua' and editing that file instead.
-
 flexprompt = flexprompt or {}
 flexprompt.settings = flexprompt.settings or {}
 flexprompt.settings.charset = "unicode"
