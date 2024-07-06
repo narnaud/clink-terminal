@@ -7,8 +7,8 @@ set __ZFZ_LAYOUT=--layout=reverse
 set __ZFZ_PREVIEW_WINDOW=--preview-window="down,border-top,50%%" --bind="ctrl-/:change-preview-window(down,70%%|hidden|)"
 
 ::: Git specific options
-set __GIT_CMD=bash fzf-git-branch-helper.sh branches
-set __GIT_CMD_ALL=bash fzf-git-branch-helper.sh all-branches
+set __GIT_CMD=bash fzf-git-branches-helper.sh branches
+set __GIT_CMD_ALL=bash fzf-git-branches-helper.sh all-branches
 set __GIT_TITLE=--border-label="🌳 Git branches"
 set __GIT_HELP=--header "CTRL-A (Show all branches)"
 set __GIT_PREVIEW_CMD="git l --color=always {1}"
