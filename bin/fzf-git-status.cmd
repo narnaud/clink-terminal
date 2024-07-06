@@ -8,7 +8,7 @@ set __ZFZ_PREVIEW_WINDOW=--preview-window="right,50%%,border-left" --bind="ctrl-
 
 ::: Git specific options
 set __GIT_CMD=git -c color.status=always status --short
-set __GIT_TITLE=--border-label="Git status"
+set __GIT_TITLE=--border-label="📁 Git status"
 set __GIT_HELP=--header "CTRL-A (Select all) / ALT-E (Edit) / ALT-S (Git add) / ALT-R (Git reset)"
 set __GIT_PREVIEW_CMD="git diff --no-ext-diff --color=always {-1}"
 set __GIT_CTRL_A="ctrl-a:select-all"
