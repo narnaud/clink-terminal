@@ -17,3 +17,5 @@ set __GIT_ALT_S="alt-s:execute-silent(git add {+2..})+down+reload(%__GIT_CMD%)"
 set __GIT_ALT_R="alt-r:execute-silent(git reset {+2..})+down+reload(%__GIT_CMD%)"
 
 %__GIT_CMD% 2>nul | fzf  %__ZFZ_FRAME% %__ZFZ_LAYOUT% %__ZFZ_PREVIEW_WINDOW% %__GIT_TITLE% %__GIT_HELP% --multi --preview=%__GIT_PREVIEW_CMD% --bind=%__GIT_ALT_E% --bind=%__GIT_ALT_S% --bind=%__GIT_CTRL_A% --bind=%__GIT_ALT_R%
+
+exit /b 0

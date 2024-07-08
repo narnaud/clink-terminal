@@ -15,3 +15,5 @@ set __EXPLORER_PREVIEW_CMD="if exist {-1}\* (echo [94m Directory[0m: {-1} &
 set __EXPLORER_ALT_E="alt-e:execute-silent(code {+2..})"
 
 %__EXPLORER_CMD% 2>nul | fzf %__ZFZ_FRAME% %__ZFZ_LAYOUT% %__ZFZ_PREVIEW_WINDOW% %__EXPLORER_TITLE% %__EXPLORER_HELP% --multi --preview=%__EXPLORER_PREVIEW_CMD% --bind=%__EXPLORER_ALT_E%
+
+exit /b 0

@@ -15,3 +15,5 @@ set __GIT_PREVIEW_CMD="git l --color=always {1}"
 set __GIT_CTRL_A="ctrl-a:change-border-label(🌳 Git all branches)+reload(%__GIT_CMD_ALL%)"
 
 %__GIT_CMD% 2>nul | fzf  %__ZFZ_FRAME% %__ZFZ_LAYOUT% %__ZFZ_PREVIEW_WINDOW% %__GIT_TITLE% %__GIT_HELP% --preview=%__GIT_PREVIEW_CMD% --bind=%__GIT_CTRL_A%
+
+exit /b 0
