@@ -12,3 +12,5 @@ set __GIT_TITLE=--border-label="🍡 Git hashes"
 set __GIT_PREVIEW_CMD="git show --color=always {2}"
 
 %__GIT_CMD% 2>nul | fzf  %__ZFZ_FRAME% %__ZFZ_LAYOUT% %__ZFZ_PREVIEW_WINDOW% %__GIT_TITLE% --preview=%__GIT_PREVIEW_CMD%
+
+exit /b 0
