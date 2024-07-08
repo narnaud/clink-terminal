@@ -3,8 +3,8 @@
 :::============================================================================
 ::: Aliases
 :::============================================================================
-doskey ls      = dirx --icons -2 -v -h $*
-doskey ll      = dirx --icons -a -og --string-sort $*
+doskey ls      = dirx --icons -2 -v -h -oga $*
+doskey ll      = dirx --icons -a -oga $*
 doskey clear   = cls
 doskey cp      = copy $*
 doskey mv      = move $*
