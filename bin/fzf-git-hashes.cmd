@@ -4,10 +4,10 @@ setlocal enableDelayedExpansion
 ::: Generic fzf options
 set __ZFZ_FRAME=--ansi --border=rounded --color="header:italic:underline"
 set __ZFZ_LAYOUT=--layout=reverse --height=50%% --min-height=20
-set __ZFZ_PREVIEW_WINDOW=--preview-window="right,50%%,border-left" --bind="ctrl-/:change-preview-window(down,50%%,border-top|hidden|)"
+set __ZFZ_PREVIEW_WINDOW=--preview-window="down,50%%,border-top" --bind="ctrl-/:change-preview-window(right,50%%,border-left|hidden|)"
 
 ::: Git specific options
-set __GIT_CMD=git l --color=always
+set __GIT_CMD=_git-log-helper.cmd
 set __GIT_TITLE=--border-label="🍡 Git hashes"
 set __GIT_PREVIEW_CMD="git show --color=always {2}"
 
