@@ -46,8 +46,9 @@ set CLINK_PATH=%~dp03rdparty\clink-flex-prompt;%~dp03rdparty\clink-zoxide;%~dp03
 ::: Change dirx colors
 set DIRX_COLORS=di=36:di hi=37:.*=37;2:ex=32:sc=33:bu=33:cm=34;4:*.md=35:do=35
 ::: Change the command used to list files and folders for fzf (use direx, for icons)
-set FZF_CTRL_T_COMMAND=dirx.exe /b /s /X:d /a:-s-h --bare-relative --icons=always --utf8 $dir
-set FZF_ALT_C_COMMAND=dirx.exe /b /s /X:d /a:d-s-h --bare-relative --icons=always --utf8 $dir
+set FZF_DEFAULT_OPTS=--ansi
+set FZF_CTRL_T_COMMAND=dirx.exe /b /s /X:d /a:-s-h --bare-relative --icons=always --escape-codes=always --utf8 $dir
+set FZF_ALT_C_COMMAND=dirx.exe /b /s /X:d /a:d-s-h --bare-relative --icons=always --escape-codes=always --utf8 $dir
 set FZF_ICON_WIDTH=2
 
 ::: Finally, inject clink
