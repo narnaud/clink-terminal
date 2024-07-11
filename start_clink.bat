@@ -17,8 +17,9 @@ doskey s      = git status $*
 doskey l      = git log --graph --pretty=format:"%%Cred%%h%%Creset -%%C(yellow)%%d%%Creset %%s %%Cgreen(%%cr) %%C(bold blue)<%%an>%%Creset" --abbrev-commit --date=relative $*
 doskey d      = git diff $*
 
-::: Github aliases
-doskey gsync  = gh repo sync
+::: Git specific aliases
+doskey gsync  = gh repo sync $*
+doskey gdel   = git branch -D $*
 
 ::: Run some software from command line
 doskey np      = "C:\Program Files\Notepad++\notepad++.exe" $*
