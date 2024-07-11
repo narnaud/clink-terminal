@@ -12,9 +12,13 @@ doskey more    = bat -p $*
 doskey e       = start %windir%\explorer.exe .
 
 ::: Git aliases
-doskey l      = git log --graph --pretty=format:"%%Cred%%h%%Creset -%%C(yellow)%%d%%Creset %%s %%Cgreen(%%cr) %%C(bold blue)<%%an>%%Creset" --abbrev-commit --date=relative
+doskey g      = git $*
 doskey s      = git status $*
+doskey l      = git log --graph --pretty=format:"%%Cred%%h%%Creset -%%C(yellow)%%d%%Creset %%s %%Cgreen(%%cr) %%C(bold blue)<%%an>%%Creset" --abbrev-commit --date=relative $*
 doskey d      = git diff $*
+
+::: Github aliases
+doskey gsync  = gh repo sync
 
 ::: Run some software from command line
 doskey np      = "C:\Program Files\Notepad++\notepad++.exe" $*
@@ -25,7 +29,7 @@ doskey xhost   = sudo code C:\Windows\System32\Drivers\etc\hosts
 doskey mariadb = mysql
 
 :: fzf aliases
-doskey fe      = %~dp0bin\fzf-explorer.cmd
+doskey fe       = %~dp0bin\fzf-explorer.cmd
 doskey fgf      = %~dp0bin\fzf-git-status.cmd
 doskey fgb      = %~dp0bin\fzf-git-branches.cmd
 doskey fgs      = %~dp0bin\fzf-git-stashes.cmd
