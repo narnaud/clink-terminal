@@ -8,26 +8,14 @@ doskey ll      = dirx --icons -a -oga $*
 doskey clear   = cls
 doskey cp      = copy $*
 doskey mv      = move $*
-doskey more    = bat -p $*
 doskey e       = start %windir%\explorer.exe .
 
-::: Git aliases
-doskey g      = git $*
-doskey s      = git status $*
-doskey l      = git log --graph --pretty=format:"%%Cred%%h%%Creset -%%C(yellow)%%d%%Creset %%s %%Cgreen(%%cr) %%C(bold blue)<%%an>%%Creset" --abbrev-commit --date=relative $*
-doskey d      = git diff $*
-
-::: Git specific aliases
-doskey gsync  = gh repo sync $*
-doskey gdel   = git branch -D $*
-
-::: Run some software from command line
-doskey np      = "C:\Program Files\Notepad++\notepad++.exe" $*
-doskey qtc     = C:\Qt\Tools\QtCreator\bin\qtcreator.exe -client $*
-
-:: Misc aliases
-doskey xhost   = sudo code C:\Windows\System32\Drivers\etc\hosts
-doskey mariadb = mysql
+::: User specific aliases
+for /f "tokens=1,2 delims=@" %%a in ('jq -r ". | to_entries[] | join(""@"")" %USERPROFILE%\.alias.json') do (
+    if "%%a%" NEQ "" (
+        doskey %%a=%%b $*
+    )
+)
 
 :: fzf aliases
 doskey fe       = %~dp0bin\fzf-explorer.cmd
