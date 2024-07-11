@@ -22,6 +22,7 @@ for /f "delims=" %%a in ('jq "has(""%1"")" %2') do (
     if "%%a"=="false" (
         echo The tool '%1' does not exist, please check your configuration file:
         echo   %2
+        set USE_PROMPT=
         goto end
     )
 )
