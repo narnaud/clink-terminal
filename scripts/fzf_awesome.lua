@@ -1,3 +1,39 @@
+--------------------------------------------------------------------------------
+-- Some advanced FXF functions for Clink.
+--
+-- Either put fzf.exe in a directory listed in the system PATH environment
+-- variable, or run 'clink set fzf.exe_location <directoryname>' to tell Clink
+-- where to find fzf.exe.
+--
+-- To use those advanced FZF functions integration, you may set key bindings
+-- manually in your .inputrc file, or you may use the default key bindings.
+--
+--[[
+
+# Default key bindings for fzf with Clink.
+"\C-e":        "luafunc:fzf_explorer"      # Ctrl+E to show an explorer like view with directories and files preview
+
+]]
+--
+--
+-- bat is available at https://github.com/sharkdp/bat
+-- FZF is available from https://github.com/junegunn/fzf
+-- DIRX is available at https://github.com/chrisant996/dirx
+-- Clink is available at https://github.com/chrisant996/clink
+--
+
+--------------------------------------------------------------------------------
+-- Compatibility check.
+
+if not io.popenrw then
+    print('fzf.lua requires a newer version of Clink; please upgrade.')
+    return
+end
+
+--------------------------------------------------------------------------------
+-- Utility methods.
+
+-- Shamelessly stolen from fzf.lua: https://github.com/chrisant996/clink-gizmos/blob/main/fzf.lua
 local function get_word_insert_bounds(line_state)
     if line_state:getwordcount() > 0 then
         local info = line_state:getwordinfo(line_state:getwordcount())
@@ -20,6 +56,7 @@ local function get_word_insert_bounds(line_state)
     end
 end
 
+-- Shamelessly stolen from fzf.lua: https://github.com/chrisant996/clink-gizmos/blob/main/fzf.lua
 local function maybe_strip_icon(str)
     local width = os.getenv("FZF_ICON_WIDTH")
     if width then
@@ -46,10 +83,12 @@ local function maybe_strip_icon(str)
     return str
 end
 
+-- Shamelessly stolen from fzf.lua: https://github.com/chrisant996/clink-gizmos/blob/main/fzf.lua
 local function need_quote(word)
     return word and word:find("[ &()[%]{}^=;!%%'+,`~]") and true
 end
 
+-- Shamelessly stolen from fzf.lua: https://github.com/chrisant996/clink-gizmos/blob/main/fzf.lua
 local function insert_match(rl_buffer, first, last, has_quote, match)
     match = maybe_strip_icon(match)
     local quote = has_quote or '"'
@@ -64,6 +103,7 @@ local function insert_match(rl_buffer, first, last, has_quote, match)
     rl_buffer:endundogroup()
 end
 
+-- Inspired from fzf.lua: https://github.com/chrisant996/clink-gizmos/blob/main/fzf.lua
 local function get_fzf(mode, label, help, preview)
     local command = settings.get('fzf.exe_location')
     if not command or command == '' then
@@ -101,6 +141,9 @@ local function get_fzf(mode, label, help, preview)
     return command
 end
 
+--------------------------------------------------------------------------------
+-- Shows an "explorer" like view, with preview of directories and files.
+-- Requires both dirx and bat to be installed and in the PATH.
 function fzf_explorer(rl_buffer, line_state)
     local command = 'dirx.exe /b /s /X:d /a:-s-h --bare-relative --icons=always --escape-codes=always --utf8'
     local preview = 'if exist {-1}\\* (echo [94mDirectory:[0m {-1} & echo. & dirx.exe /b /X:d /a:-s-h --bare-relative --level=3 --tree --icons=always --escape-codes=always --utf8 {-1}) else (echo [33mFile:[0m {-1} & echo. & bat --color=always --style=changes,numbers --line-range :500 {-1})'
