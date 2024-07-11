@@ -61,8 +61,10 @@ for /f "delims=" %%a in ('%~dp0\_use_do_prepend.cmd %1 %2') do (
 
 ::: Prepend to the PATH variable
 :::============================================================================
-for /f "delims=" %%a in ('%~dp0\_use_set_path.cmd %1 %2') do (
-    set "PATH=%%a"
+for /f "delims==" %%a in ('jq -r ".[""%1""].path? | try(join("";""))" %2') do (
+    if "%%a%" NEQ "" (
+        set "PATH=%%a;%PATH%"
+    )
 )
 
 ::: Call all deferred scripts
