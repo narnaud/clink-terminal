@@ -41,4 +41,6 @@ C-k:                add-history                     # Ctrl-K (replaces `kill-lin
 #"\t":          "luafunc:fzf_tab"            # Tab uses fzf to filter match completions, but only when preceded by '**' (recursive).
 "\e[27;5;32~": "luafunc:fzf_complete_force" # Ctrl+Space uses fzf to filter match completions (and supports '**' for recursive).
 
+"\C-e":        "luafunc:fzf_explorer"
+
 $endif              # end clink-only section
