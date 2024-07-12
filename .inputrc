@@ -45,5 +45,6 @@ C-k:                add-history                     # Ctrl-K (replaces `kill-lin
 "\C-g\C-f":    "luafunc:fzf_git_status"
 "\C-g\C-s":    "luafunc:fzf_git_stashes"
 "\C-g\C-h":    "luafunc:fzf_git_hashes"
+"\C-g\C-b":    "luafunc:fzf_git_branches"
 
 $endif              # end clink-only section
