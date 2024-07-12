@@ -24,6 +24,11 @@ doskey fgb      = %~dp0bin\fzf-git-branches.cmd
 doskey fgs      = %~dp0bin\fzf-git-stashes.cmd
 doskey fgh      = %~dp0bin\fzf-git-hashes.cmd
 
+::: Fix an issue with bat/less
+::: see https://github.com/sharkdp/bat/issues/1573
+::: see https://github.com/gwsw/less/issues/538
+set BAT_PAGER=less -FR -Da
+
 :::============================================================================
 ::: Add custom command path
 :::============================================================================
