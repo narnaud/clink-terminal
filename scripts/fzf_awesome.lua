@@ -137,6 +137,17 @@ local function get_fzf(mode, label, help, preview)
     return command
 end
 
+-- Shamelessly stolen from fzf.lua: https://github.com/chrisant996/clink-gizmos/blob/main/noclink.lua
+local function get_script_dir()
+    local dir
+    local info = debug.getinfo(1, "S")
+    if info and info.source then
+        dir = path.getdirectory(info.source:sub(2))
+    end
+    return dir or ""
+end
+
+
 --------------------------------------------------------------------------------
 -- Shows an "explorer" like view, with preview of directories and files.
 -- Requires both dirx and bat to be installed and in the PATH.
@@ -237,6 +248,40 @@ function fzf_git_hashes(rl_buffer, line_state)
     local str = r:read('*line')
     str = str and str:gsub('[\r\n]+', ' ') or ''
     str = str:sub(3, 9)
+    r:close()
+
+    if #str > 0 then
+        insert_match(rl_buffer, first, last, has_quote, str)
+    end
+
+    rl_buffer:refreshline()
+end
+
+--------------------------------------------------------------------------------
+-- Shows git branches in the current repository.
+function fzf_git_branches(rl_buffer, line_state)
+    local dir = get_script_dir()
+    local command = 'git branch --format="%(HEAD) %(color:yellow)%(refname:short) %(color:green)(%(committerdate:relative)) - %(color:white)%(subject)%(color:reset)" --color=always'
+    local command_all = command..' --all'
+
+    local preview = path.join(dir, "git-log-helper.cmd")..' {1}'
+
+    local fzf_command = get_fzf('vertical', '🌳 Git branches', 'CTRL-A (Show all branches) / ALT-X (Drop branch)', preview)
+    local select_all_bind = ' --bind="ctrl-a:change-border-label(🌳 Git all branches)+reload('..command_all:gsub('"', '"""')..')"'
+    local drop_bind = ' --bind="alt-x:execute-silent(git branch -D {1})+reload('..command:gsub('"', '"""')..')"'
+    local checkout_bind = ' --bind="alt-c:execute-silent(git chekout {1})+reload('..command:gsub('"', '"""')..')"'
+    local first, last, has_quote, delimit = get_word_insert_bounds(line_state) -- luacheck: no unused
+
+    local r = io.popen(command..' 2>nul | '..fzf_command..select_all_bind..drop_bind..checkout_bind..' --multi --no-sort')
+    if not r then
+        rl_buffer:ding()
+        return
+    end
+
+    local str = r:read('*line')
+    str = str and str:gsub('[\r\n]+', ' ') or ''
+    str = str:sub(3)
+    str = str:gsub('%s.*$', '')
     r:close()
 
     if #str > 0 then
