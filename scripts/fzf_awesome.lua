@@ -132,7 +132,7 @@ local function get_fzf(mode, label, help, preview)
     if mode == 'horizontal' then
         command = command..' --preview-window="right,50%,border-left" --bind="ctrl-/:change-preview-window(down,50%,border-top|hidden|)"'
     elseif mode == 'vertical' then
-        command = command..'--preview-window="down,50%,border-top" --bind="ctrl-/:change-preview-window(down,70%,border-top|hidden|)"'
+        command = command..' --preview-window="down,50%,border-top" --bind="ctrl-/:change-preview-window(down,70%,border-top|hidden|)"'
     end
     return command
 end
@@ -188,6 +188,55 @@ function fzf_git_status(rl_buffer, line_state)
     local str = r:read('*line')
     str = str and str:gsub('[\r\n]+', ' ') or ''
     str = str:gsub('^%a+%s+', '')
+    r:close()
+
+    if #str > 0 then
+        insert_match(rl_buffer, first, last, has_quote, str)
+    end
+
+    rl_buffer:refreshline()
+end
+
+--------------------------------------------------------------------------------
+-- Shows git stashes in the current repository, and allows to remove them.
+function fzf_git_stashes(rl_buffer, line_state)
+    local command = 'git stash list --color=always'
+    local preview = 'git show --color=always {1}'
+
+    local fzf_command = get_fzf('horizontal', '📦 Git stashes', 'ALT-X (Drop stash)', preview)
+    local drop_bind = ' --bind="alt-x:execute-silent(git stash drop {1})+reload('..command..')"'
+    local first, last, has_quote, delimit = get_word_insert_bounds(line_state) -- luacheck: no unused
+
+    local r = io.popen(command..' 2>nul | '..fzf_command..drop_bind..' -d: ')
+    if not r then
+        rl_buffer:ding()
+        return
+    end
+
+    local str = r:read('*line')
+    r:close()
+
+    rl_buffer:refreshline()
+end
+
+--------------------------------------------------------------------------------
+-- Shows git hashes in the current repository.
+function fzf_git_hashes(rl_buffer, line_state)
+    local command = 'git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative --color=always'
+    local preview = 'git show --color=always {2}'
+
+    local fzf_command = get_fzf('vertical', '🍒 Git hashes', '', preview)
+    local first, last, has_quote, delimit = get_word_insert_bounds(line_state) -- luacheck: no unused
+
+    local r = io.popen(command..' 2>nul | '..fzf_command..' --no-sort')
+    if not r then
+        rl_buffer:ding()
+        return
+    end
+
+    local str = r:read('*line')
+    str = str and str:gsub('[\r\n]+', ' ') or ''
+    str = str:sub(3, 9)
     r:close()
 
     if #str > 0 then
