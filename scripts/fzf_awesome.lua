@@ -5,12 +5,12 @@
 -- variable, or run 'clink set fzf.exe_location <directoryname>' to tell Clink
 -- where to find fzf.exe.
 --
--- To use those advanced FZF functions integration, you may set key bindings
--- manually in your .inputrc file, or you may use the default key bindings.
+-- To use those advanced FZF functions integration, you may set key binds
+-- manually in your .inputrc file, or you may use the default key binds.
 --
 --[[
 
-# Default key bindings for fzf with Clink.
+# Default key binds for fzf with Clink.
 "\C-e":        "luafunc:fzf_explorer"      # Ctrl+E to show an explorer like view with directories and files preview
 
 ]]
@@ -57,25 +57,21 @@ local function get_word_insert_bounds(line_state)
 end
 
 -- Shamelessly stolen from fzf.lua: https://github.com/chrisant996/clink-gizmos/blob/main/fzf.lua
-local function maybe_strip_icon(str)
-    local width = os.getenv("FZF_ICON_WIDTH")
-    if width then
-        width = tonumber(width)
-        if width and width > 0 then
-            if unicode.iter then
-                local iter = unicode.iter(str)
-                local c = iter()
-                if c then
-                    return str:sub(#c + (width - 1) + 1)
-                end
-            else
-                if str:byte() == 32 then
-                    return str:sub(width + 1)
-                elseif width > 1 then
-                    local tmp = str:match("^[^ ]+(.*)$")
-                    if tmp then
-                        return tmp:sub(width)
-                    end
+local function maybe_strip_icon(str, width)
+    if width and width > 0 then
+        if unicode.iter then
+            local iter = unicode.iter(str)
+            local c = iter()
+            if c then
+                return str:sub(#c + (width - 1) + 1)
+            end
+        else
+            if str:byte() == 32 then
+                return str:sub(width + 1)
+            elseif width > 1 then
+                local tmp = str:match("^[^ ]+(.*)$")
+                if tmp then
+                    return tmp:sub(width)
                 end
             end
         end
@@ -89,8 +85,8 @@ local function need_quote(word)
 end
 
 -- Shamelessly stolen from fzf.lua: https://github.com/chrisant996/clink-gizmos/blob/main/fzf.lua
-local function insert_match(rl_buffer, first, last, has_quote, match)
-    match = maybe_strip_icon(match)
+local function insert_match(rl_buffer, first, last, has_quote, match, icon_width)
+    match = maybe_strip_icon(match, icon_width)
     local quote = has_quote or '"'
     local use_quote = ((has_quote or need_quote(match)) and quote) or ''
     rl_buffer:beginundogroup()
@@ -128,9 +124,9 @@ local function get_fzf(mode, label, help, preview)
     command = command..' --border-label="'..label..'"'
     command = command..' --preview="'..preview..'"'
 
-    help = help or ''
-    if not help == '' then
-        command = command..' --header "'..help..'"'
+    -- Check if help is not empty and display it
+    if help and help ~= '' then
+        command = command..' --header-first --header "'..help..'"'
     end
 
     if mode == 'horizontal' then
@@ -149,10 +145,10 @@ function fzf_explorer(rl_buffer, line_state)
     local preview = 'if exist {-1}\\* (echo [94mDirectory:[0m {-1} & echo. & dirx.exe /b /X:d /a:-s-h --bare-relative --level=3 --tree --icons=always --escape-codes=always --utf8 {-1}) else (echo [33mFile:[0m {-1} & echo. & bat --color=always --style=changes,numbers --line-range :500 {-1})'
 
     local fzf_command = get_fzf('horizontal', '📁 Explorer', 'ALT-E (Edit in VS Code)', preview)
-    local open_binding = ' --binding="alt-e:execute-silent(code {+2..})"'
+    local open_bind = ' --bind="alt-e:execute-silent(code {+2..})"'
     local first, last, has_quote, delimit = get_word_insert_bounds(line_state) -- luacheck: no unused
 
-    local r = io.popen(command..' 2>nul | '..fzf_command..' --multi')
+    local r = io.popen(command..' 2>nul | '..fzf_command..open_bind..' --multi')
     if not r then
         rl_buffer:ding()
         return
@@ -161,6 +157,37 @@ function fzf_explorer(rl_buffer, line_state)
     local str = r:read('*line')
     str = str and str:gsub('[\r\n]+', ' ') or ''
     str = str:gsub(' +$', '')
+    r:close()
+
+    if #str > 0 then
+        insert_match(rl_buffer, first, last, has_quote, str, 2)
+    end
+
+    rl_buffer:refreshline()
+end
+
+--------------------------------------------------------------------------------
+-- Shows git status in the current repository.
+function fzf_git_status(rl_buffer, line_state)
+    local command = 'git -c color.status=always status --short'
+    local preview = 'git diff --no-ext-diff --color=always {-1}'
+
+    local fzf_command = get_fzf('horizontal', '🏠 Git status', 'CTRL-A (Select all) / ALT-E (Edit) / ALT-S (Git add) / ALT-R (Git reset)', preview)
+    local select_all_bind = ' --bind="ctrl-a:select-all"'
+    local open_bind = ' --bind="alt-e:execute-silent(code {+2..})"'
+    local add_bind = ' --bind="alt-s:execute-silent(git add {+2..})+down+reload('..command..')"'
+    local reset_bind = ' --bind="alt-r:execute-silent(git reset {+2..})+down+reload('..command..')"'
+    local first, last, has_quote, delimit = get_word_insert_bounds(line_state) -- luacheck: no unused
+
+    local r = io.popen(command..' 2>nul | '..fzf_command..select_all_bind..open_bind..add_bind..reset_bind..' --multi')
+    if not r then
+        rl_buffer:ding()
+        return
+    end
+
+    local str = r:read('*line')
+    str = str and str:gsub('[\r\n]+', ' ') or ''
+    str = str:gsub('^%a+%s+', '')
     r:close()
 
     if #str > 0 then
