@@ -17,13 +17,6 @@ for /f "tokens=1,2 delims=@" %%a in ('jq -r ". | to_entries[] | join(""@"")" %US
     )
 )
 
-:: fzf aliases
-doskey fe       = %~dp0bin\fzf-explorer.cmd
-doskey fgf      = %~dp0bin\fzf-git-status.cmd
-doskey fgb      = %~dp0bin\fzf-git-branches.cmd
-doskey fgs      = %~dp0bin\fzf-git-stashes.cmd
-doskey fgh      = %~dp0bin\fzf-git-hashes.cmd
-
 ::: Fix an issue with bat/less
 ::: see https://github.com/sharkdp/bat/issues/1573
 ::: see https://github.com/gwsw/less/issues/538
