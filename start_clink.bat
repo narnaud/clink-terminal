@@ -11,9 +11,11 @@ doskey mv      = move $*
 doskey e       = start %windir%\explorer.exe .
 
 ::: User specific aliases
-for /f "tokens=1,2 delims=@" %%a in ('jq -r ". | to_entries[] | join(""@"")" %USERPROFILE%\.alias.json') do (
-    if "%%a%" NEQ "" (
-        doskey %%a=%%b $*
+if exist %USERPROFILE%\.alias.json (
+    for /f "tokens=1,2 delims=@" %%a in ('jq -r ". | to_entries[] | join(""@"")" %USERPROFILE%\.alias.json') do (
+        if "%%a%" NEQ "" (
+            doskey %%a=%%b $*
+        )
     )
 )
 
