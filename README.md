@@ -58,6 +58,8 @@ The prompt will show different information (some may be hidden if not needed or 
 - on the left: `battery` ) `path` ) `use tool` ) `git` )
 - on the right: `error code` ) `duration` ) `time` )
 
+> Probably one of the best feature of the prompt is that the git status is asynchrone, so you never have to wait for it to finish before being able to enter a command.
+
 ### Aliases
 
 The config setup some aliases already, but you are free to add more by creating a `%USERPROFILE%\.alias.json`, here is an example file:
@@ -173,4 +175,5 @@ This won't be possible without the help of those giants:
 - [jq](https://jqlang.github.io/jq/)
 - [less](https://greenwoodsoftware.com/less/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [sudo](https://github.com/lukesampson/psutils)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
