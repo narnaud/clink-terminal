@@ -183,14 +183,14 @@ function fzf_git_status(rl_buffer, line_state)
     local command = 'git -c color.status=always status --short'
     local preview = 'git diff --no-ext-diff --color=always {-1}'
 
-    local fzf_command = get_fzf('horizontal', '🏠 Git status', 'CTRL-A (Select all) / ALT-E (Edit) / ALT-S (Git add) / ALT-R (Git reset)', preview)
+    local fzf_command = get_fzf('horizontal', '🏠 Git status', 'CTRL-A (Select all) / ALT-E (Edit) / ALT-S (Git add) / ALT-R (Git restore)', preview)
     local select_all_bind = ' --bind="ctrl-a:select-all"'
     local open_bind = ' --bind="alt-e:execute-silent(code {+2..})"'
     local add_bind = ' --bind="alt-s:execute-silent(git add {+2..})+down+reload('..command..')"'
-    local reset_bind = ' --bind="alt-r:execute-silent(git reset {+2..})+down+reload('..command..')"'
+    local restore_bind = ' --bind="alt-r:execute-silent(git restore {+2..})+down+reload('..command..')"'
     local first, last, has_quote, delimit = get_word_insert_bounds(line_state) -- luacheck: no unused
 
-    local r = io.popen(command..' 2>nul | '..fzf_command..select_all_bind..open_bind..add_bind..reset_bind..' --multi')
+    local r = io.popen(command..' 2>nul | '..fzf_command..select_all_bind..open_bind..add_bind..restore_bind..' --multi')
     if not r then
         rl_buffer:ding()
         return
