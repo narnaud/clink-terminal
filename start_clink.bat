@@ -8,6 +8,7 @@ doskey ll      = dirx --icons -a -oga $*
 doskey clear   = cls
 doskey cp      = copy $*
 doskey mv      = move $*
+doskey rm      = %USERPROFILE%\scoop\apps\git\current\usr\bin\rm.exe $*
 doskey e       = start %windir%\explorer.exe .
 
 ::: User specific aliases
