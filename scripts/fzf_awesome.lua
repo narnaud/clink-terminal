@@ -263,8 +263,10 @@ end
 -- Shows git branches in the current repository.
 function fzf_git_branches(rl_buffer, line_state)
     local dir = get_script_dir()
-    local command = 'git branch --format="%(HEAD) %(color:yellow)%(refname:short) %(color:green)(%(committerdate:relative)) - %(color:white)%(subject)%(color:reset)" --color=always'
-    local command_all = command..' --all'
+    local git_command = 'git branch --format="%(HEAD) %(color:yellow)%(refname:short) %(color:green)(%(committerdate:relative))~~%(color:white)%(subject)%(color:reset)" --color=always'
+    local column_command = '%USERPROFILE%\\scoop\\apps\\git\\current\\usr\\bin\\column.exe -ts$\'~~\''
+    local command = git_command..' | '..column_command
+    local command_all = git_command..' --all | '..column_command
 
     local preview = path.join(dir, "git-log-helper.cmd")..' {1}'
 
