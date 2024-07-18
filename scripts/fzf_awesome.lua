@@ -181,7 +181,9 @@ end
 -- Shows git status in the current repository.
 function fzf_git_status(rl_buffer, line_state)
     local command = 'git -c color.status=always status --short'
-    local preview = 'git diff --no-ext-diff --color=always {-1}'
+
+    local dir = get_script_dir()
+    local preview = path.join(dir, "git-status-file.cmd")..' {+2..}'
 
     local fzf_command = get_fzf('horizontal', '🏠 Git status', 'CTRL-A (Select all) / ALT-E (Edit) / ALT-S (Git add) / ALT-R (Git restore)', preview)
     local select_all_bind = ' --bind="ctrl-a:select-all"'
