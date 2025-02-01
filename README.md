@@ -20,7 +20,7 @@ This will install `scoop` with the main bucket, as well as the `nerd-fonts` buck
 Then it's time to install all the useful tools used for the terminal:
 
 ```
-scoop install cascadiacode-nf clink clink-completions bat fd fzf jq ripgrep sudo vim which zoxide
+scoop install cascadiacode-nf clink bat fd fzf jq ripgrep sudo vim which zoxide
 ```
 
 ### Terminal integration

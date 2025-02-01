@@ -41,7 +41,7 @@ ssh-agent -s 2>nul
 ::: Change the .inputrc file (the one in this directory)
 set CLINK_INPUTRC=%~dp0
 ::: Add some script paths. Note that clink-flex-prompt must be before scripts
-set CLINK_PATH=%~dp03rdparty\clink-flex-prompt;%~dp03rdparty\clink-zoxide;%~dp03rdparty\clink-gizmos;%~dp0scripts
+set CLINK_PATH=%~dp03rdparty\clink-flex-prompt;%~dp03rdparty\clink-completions;%~dp03rdparty\clink-zoxide;%~dp03rdparty\clink-gizmos;%~dp0scripts
 ::: Change dirx colors
 set DIRX_COLORS=di=36:di hi=37:.*=37;2:ex=32:sc=33:bu=33:cm=34;4:*.md=35:do=35
 ::: Change the command used to list files and folders for fzf (use direx, for icons)
