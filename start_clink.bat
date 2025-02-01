@@ -6,8 +6,8 @@
 doskey ls      = dirx --icons -2 -v -h -oga $*
 doskey ll      = dirx --icons -a -oga $*
 doskey clear   = cls
-doskey cp      = copy $*
-doskey mv      = move $*
+doskey cp      = %USERPROFILE%\scoop\apps\git\current\usr\bin\cp.exe $*
+doskey mv      = %USERPROFILE%\scoop\apps\git\current\usr\bin\mv.exe $*
 doskey rm      = %USERPROFILE%\scoop\apps\git\current\usr\bin\rm.exe $*
 doskey e       = start %windir%\explorer.exe .
 
