@@ -20,7 +20,7 @@ This will install `scoop` with the main bucket, as well as the `nerd-fonts` buck
 Then it's time to install all the useful tools used for the terminal:
 
 ```
-scoop install cascadiacode-nf clink bat fd fzf jq ripgrep sudo vim which zoxide
+scoop install cascadiacode-nf clink bat fd fzf jq ripgrep vim which zoxide
 ```
 
 ### Terminal integration
@@ -55,8 +55,8 @@ First of course is a nice-looking prompt (you can customize it by editing the `s
 
 The prompt will show different information (some may be hidden if not needed or empty):
 
-- on the left: `battery` ) `path` ) `use tool` ) `git` )
-- on the right: `error code` ) `duration` ) `time` )
+- on the left: `admin` / `battery` / `path` / `use tool` / `git` /
+- on the right: \ `error code` \ `duration` \ `time`
 
 > Probably one of the best feature of the prompt is that the git status is asynchrone, so you never have to wait for it to finish before being able to enter a command.
 
@@ -175,5 +175,5 @@ This won't be possible without the help of those giants:
 - [jq](https://jqlang.github.io/jq/)
 - [less](https://greenwoodsoftware.com/less/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
-- [sudo](https://github.com/lukesampson/psutils)
+- [scoop](https://github.com/ScoopInstaller/Scoop)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
