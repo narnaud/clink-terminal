@@ -77,7 +77,7 @@ The config setup some aliases already, but you are free to add more by creating 
 
 ### Project configuration
 
-The current setup contains a unique tool named `use` (inspired by [PsEnv](https://github.com/KierDugan/PsEnv)), paired with a json file `%USERPROFILE%\.tools.json`, allowing you to setup an environment for your project. The json file is looking like this:
+The current setup contains a unique tool named `use` (inspired by [PsEnv](https://github.com/KierDugan/PsEnv)), paired with a json file `%USERPROFILE%\.env.json`, allowing you to setup an environment for your project. The json file is looking like this:
 
 ```json
 {
@@ -110,22 +110,22 @@ The current setup contains a unique tool named `use` (inspired by [PsEnv](https:
 }
 ```
 
-The json file contains the list of "tools" (or better setup, the name is historical):
+The json file contains a list of environments:
 
 - `display`: the string that will be displayed when setting the tool
 - `set`: set a list of environment variables
 - `append`: append value to a list of environment variables
-- `append`: prepend value to a list of environment variables
+- `prepend`: prepend value to a list of environment variables
 - `path`: add paths to the `PATH` environment variable
 - `defer`: call one or multiple batch files to finish the setup
-- `use`: set up other tools before setting up this one
+- `use`: set up other environment before setting up this one
 - `go`: go to a particular path at the end of the setup
 
-In the small example, you can see the knut tool is using both the msvc2022 and qt6.7 tools, and will go to the `C:\dev\knut\knut` directory.
+In the small example, you can see the knut environment is using both the msvc2022 and qt6.7 environments, and will go to the `C:\dev\knut\knut` directory.
 
 ![](assets/use.png)
 
-In the screenshot, I'm setting up the `knut` tool with `use knut` (note: there is also completion). You can see the display for the different tools set up, as well as a `󱁤 knut` in the prompt, showing the current tool(s) set up.
+In the screenshot, I'm setting up the `knut` environment with `use knut` (note: there is also completion). You can see the display for the different environments set up, as well as a `󱁤 knut` in the prompt, showing the current encironment set up.
 
 ### Fuzzy finder
 
@@ -139,7 +139,7 @@ In the screenshot, I'm setting up the `knut` tool with `use knut` (note: there i
 
 ![](assets/fzf-files.png)
 
-It's also used for more advanced tools (`Ctrl+\` will change the preview position or hide it):
+It's also used for more advanced views (`Ctrl+\` will change the preview position or hide it):
 
 - `Ctrl-E`: explorer like view, with directory or file previews
 - `Ctrl-g,Ctr-f`: git status, with diff for each file

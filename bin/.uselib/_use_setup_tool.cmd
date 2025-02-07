@@ -8,7 +8,7 @@
 
 ::: Follow the go directory, but only for the first tool set
 :::============================================================================
-if "%__USE_TOOLS:~2,-2%"=="%1" (
+if "%__USE_ENV:~2,-2%"=="%1" (
     for /f "delims=" %%a in ('jq -r ".[""%1""].go" %2') do (
         if "%%a" NEQ "null" (
             cd %%a
@@ -27,10 +27,10 @@ for /f "delims=" %%a in ('jq "has(""%1"")" %2') do (
     )
 )
 
-::: Setup sub-tools
+::: Setup sub-envs
 :::============================================================================
-for /f "delims=" %%a in ('jq -r "((.[""%1""].use // []) - [%__USE_TOOLS%])[]?" %2') do (
-    call %~dp0_use_append_variable.cmd __USE_TOOLS ""%%a""
+for /f "delims=" %%a in ('jq -r "((.[""%1""].use // []) - [%__USE_ENV%])[]?" %2') do (
+    call %~dp0_use_append_variable.cmd __USE_ENV ""%%a""
     if "%%a" NEQ "" (
         call %~dp0\_use_setup_tool.cmd %%a %2
     )

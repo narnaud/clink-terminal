@@ -2,7 +2,7 @@
 
 ::: Note: we can't use setlocal as we want to change the env variables
 
-set "__USE_TOOLS_FILE=%USERPROFILE%\.tools.json"
+set "__USE_ENV_FILE=%USERPROFILE%\.env.json"
 
 :::============================================================================
 ::: Parse command line arguments
@@ -32,17 +32,17 @@ if "%~1"=="" (
 ::: Setup one tool
 ::: Keep the defer scripts ran to avoid re-running them
 :::============================================================================
-set __USE_TOOLS=""%1""
+set __USE_ENV=""%1""
 set __USE_DEFER_SCRIPT=
-call %~dp0.uselib\_use_setup_tool.cmd %1 %__USE_TOOLS_FILE%
+call %~dp0.uselib\_use_setup_tool.cmd %1 %__USE_ENV_FILE%
 shift /1
 goto parse
 
 :::============================================================================
 :list
-::: Show the list of tools
+::: Show the list of envs
 :::============================================================================
-jq -r keys[] %__USE_TOOLS_FILE%
+jq -r keys[] %__USE_ENV_FILE%
 goto end
 
 
@@ -50,13 +50,13 @@ goto end
 :help
 ::: Display an help for the command
 :::============================================================================
-echo use - commandline utility to setup environment for tools
+echo use - commandline utility to setup environment
 echo.
-echo Usage:  use toolname [toolname2...]
+echo Usage:  use env [env2...]
 echo.
 echo   -h --help      Display this help text.
-echo   -l --list      Display the list of known tools.
+echo   -l --list      Display the list of known environments.
 goto end
 
 :end
-set __USE_TOOLS=
+set __USE_ENV=
