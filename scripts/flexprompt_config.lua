@@ -10,7 +10,7 @@ flexprompt.settings.connection = "solid"
 flexprompt.settings.flow = "concise"
 flexprompt.settings.frame_color = "darkest"
 flexprompt.settings.heads = "slant"
-flexprompt.settings.left_frame = "round"
+flexprompt.settings.left_frame = "none"
 flexprompt.settings.left_prompt = "{admin}{battery:levelicon:onlyicon}{histlabel}{cwd:type=smart}{env:label=󱁤::var=USE_PROMPT:color=black}{scm}"
 flexprompt.settings.lines = "two"
 flexprompt.settings.nerdfonts_version = 3
