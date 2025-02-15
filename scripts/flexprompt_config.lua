@@ -31,4 +31,4 @@ flexprompt.settings.symbols =
 }
 flexprompt.settings.tails = "flat"
 flexprompt.settings.use_8bit_color = true
-flexprompt.settings.use_icons = true
+flexprompt.settings.use_icons = false
