@@ -2,7 +2,7 @@
 
 ::: Note: we can't use setlocal as we want to change the env variables
 
-set "__USE_ENV_FILE=%USERPROFILE%\.env.json"
+set "__USE_ENV_FILE=%USERPROFILE%\.useconfig.json"
 
 :::============================================================================
 ::: Parse command line arguments

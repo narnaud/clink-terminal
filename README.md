@@ -77,7 +77,7 @@ The config setup some aliases already, but you are free to add more by creating 
 
 ### Project configuration
 
-The current setup contains a unique tool named `use` (inspired by [PsEnv](https://github.com/KierDugan/PsEnv)), paired with a json file `%USERPROFILE%\.env.json`, allowing you to setup an environment for your project. The json file is looking like this:
+The current setup contains a unique tool named `use` (inspired by [PsEnv](https://github.com/KierDugan/PsEnv)), paired with a json file `%USERPROFILE%\.useconfig.json`, allowing you to setup an environment for your project. The json file is looking like this:
 
 ```json
 {
