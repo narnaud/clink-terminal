@@ -25,6 +25,9 @@ if exist %USERPROFILE%\.alias.json (
 ::: see https://github.com/gwsw/less/issues/538
 set BAT_PAGER=less -FR -Da
 
+::: Yazi setup
+set YAZI_FILE_ONE=%USERPROFILE%\scoop\apps\git\current\usr\bin\file.exe
+
 :::============================================================================
 ::: Add custom command path
 :::============================================================================
