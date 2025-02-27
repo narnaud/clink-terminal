@@ -20,12 +20,9 @@ if exist %USERPROFILE%\.alias.json (
     )
 )
 
-::: Fix an issue with bat/less
-::: see https://github.com/sharkdp/bat/issues/1573
-::: see https://github.com/gwsw/less/issues/538
-set BAT_PAGER=less -FR -Da
-
+:::============================================================================
 ::: Yazi setup
+:::============================================================================
 set YAZI_FILE_ONE=%USERPROFILE%\scoop\apps\git\current\usr\bin\file.exe
 
 :::============================================================================
