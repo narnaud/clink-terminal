@@ -42,8 +42,8 @@ set DIRX_COLORS=di=36:di hi=37:.*=37;2:ex=32:sc=33:bu=33:cm=34;4:*.md=35:do=35
 :::============================================================================
 ::: Change the command used to list files and folders for fzf (use dirx, for icons)
 set FZF_DEFAULT_OPTS=--ansi
-set FZF_CTRL_T_COMMAND=dirx.exe /b /s /X:d /a:-s-h --bare-relative --icons=always --escape-codes=always --utf8 $dir
-set FZF_ALT_C_COMMAND=dirx.exe /b /s /X:d /a:d-s-h --bare-relative --icons=always --escape-codes=always --utf8 $dir
+set FZF_CTRL_T_COMMAND=dirx.exe /b /s /X:d /a:-s-h --bare-relative --icons=always --escape-codes=always --utf8 --ignore-glob=.git/** $dir
+set FZF_ALT_C_COMMAND=dirx.exe /b /s /X:d /a:d-s-h --bare-relative --icons=always --escape-codes=always --utf8 --ignore-glob=.git/** $dir
 set FZF_ICON_WIDTH=2
 
 :::============================================================================

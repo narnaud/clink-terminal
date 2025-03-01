@@ -152,8 +152,8 @@ end
 -- Shows an "explorer" like view, with preview of directories and files.
 -- Requires both dirx and bat to be installed and in the PATH.
 function fzf_explorer(rl_buffer, line_state)
-    local command = 'dirx.exe /b /s /X:d /a:-s-h --bare-relative --icons=always --escape-codes=always --utf8'
-    local preview = 'if exist {-1}\\* (echo [94mDirectory:[0m {-1} & echo. & dirx.exe /b /X:d /a:-s-h --bare-relative --level=3 --tree --icons=always --escape-codes=always --utf8 {-1}) else (echo [33mFile:[0m {-1} & echo. & bat --color=always --style=changes,numbers --line-range :500 {-1})'
+    local command = 'dirx.exe /b /s /X:d /a:-s-h --bare-relative --icons=always --escape-codes=always --utf8 --ignore-glob=.git/**'
+    local preview = 'if exist {-1}\\* (echo [94mDirectory:[0m {-1} & echo. & dirx.exe /b /X:d /a:-s-h --bare-relative --level=3 --tree --icons=always --escape-codes=always --utf8 --ignore-glob=.git/** {-1}) else (echo [33mFile:[0m {-1} & echo. & bat --color=always --style=changes,numbers --line-range :500 {-1})'
 
     local fzf_command = get_fzf('horizontal', '📁 Explorer', 'ALT-E (Edit in VS Code)', preview)
     local open_bind = ' --bind="alt-e:execute-silent(code {+2..})"'
@@ -183,12 +183,12 @@ function fzf_git_status(rl_buffer, line_state)
     local command = 'git -c color.status=always status --short'
 
     local dir = get_script_dir()
-    local preview = path.join(dir, "git-status-file.cmd")..' {+2..}'
+    local preview = path.join(dir, "fzf_git-status-file.cmd")..' {+2..}'
 
-    local fzf_command = get_fzf('horizontal', '🏠 Git status', 'CTRL-A (Select all) / ALT-E (Edit) / ALT-S (Git add) / ALT-R (Git restore)', preview)
+    local fzf_command = get_fzf('horizontal', '🏠 Git status', 'CTRL-A (All) / ALT-E (Edit) / ALT-A (Add) / ALT-R (Restore)', preview)
     local select_all_bind = ' --bind="ctrl-a:select-all"'
     local open_bind = ' --bind="alt-e:execute-silent(code {+2..})"'
-    local add_bind = ' --bind="alt-s:execute-silent(git add {+2..})+down+reload('..command..')"'
+    local add_bind = ' --bind="alt-a:execute-silent(git add {+2..})+down+reload('..command..')"'
     local restore_bind = ' --bind="alt-r:execute-silent(git restore {+2..})+down+reload('..command..')"'
     local first, last, has_quote, delimit = get_word_insert_bounds(line_state) -- luacheck: no unused
 
@@ -238,7 +238,7 @@ function fzf_git_hashes(rl_buffer, line_state)
     local command = 'git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative --color=always'
     local preview = 'git show --color=always {2}'
 
-    local fzf_command = get_fzf('vertical', '🍒 Git hashes', '', preview)
+    local fzf_command = get_fzf('vertical', '🍒 Git history', '', preview)
     local first, last, has_quote, delimit = get_word_insert_bounds(line_state) -- luacheck: no unused
 
     local r = io.popen(command..' 2>nul | '..fzf_command..' --no-sort')
@@ -268,7 +268,7 @@ function fzf_git_branches(rl_buffer, line_state)
     local command = git_command..' | '..column_command
     local command_all = git_command..' --all | '..column_command
 
-    local preview = path.join(dir, "git-log-helper.cmd")..' {1}'
+    local preview = path.join(dir, "fzf_git-log-helper.cmd")..' {1}'
 
     local fzf_command = get_fzf('vertical', '🌳 Git branches', 'CTRL-A (Show all branches) / ALT-X (Drop branch)', preview)
     local select_all_bind = ' --bind="ctrl-a:change-border-label(🌳 Git all branches)+reload('..command_all:gsub('"', '"""')..')"'
