@@ -56,7 +56,7 @@ ssh-agent -s 2>nul
 :::============================================================================
 ::: Change the .inputrc file (the one in this directory)
 set CLINK_INPUTRC=%~dp0
-::: Add some script paths. Note that clink-flex-prompt must be before scripts
+::: Add some script paths.
 set CLINK_PATH=%~dp03rdparty\clink-flex-prompt;%~dp03rdparty\clink-completions;%~dp03rdparty\clink-zoxide;%~dp03rdparty\clink-gizmos;%~dp0scripts
 
 ::: Finally, inject clink
