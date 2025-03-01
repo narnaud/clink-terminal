@@ -22,7 +22,7 @@ jobs:
       - name: Package | Package [Windows]
         if: matrix.os == 'windows-latest'
         run: |
-          7z a clink-terminal.zip * -xr!.git* -xr!.pre-commit-config.yaml
+          7z a clink-terminal.zip * "-xr!.git*" "-xr!.pre-commit-config.yaml"
       - name: Package | Checksums
         shell: bash
         run: openssl dgst -sha256 -r "clink-terminal.zip" | awk '{print $1}' > "clink-terminal.zip.sha256"
