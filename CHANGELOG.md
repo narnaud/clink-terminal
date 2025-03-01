@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.1.0](https://github.com/narnaud/clink-terminal/compare/v1.0.0...v1.1.0) (2025-03-01)
+
+
+### Features
+
+* Remove clink-completions submodule ([3e36ef7](https://github.com/narnaud/clink-terminal/commit/3e36ef7cc75f927ca7b1f3f61c0b09c0762cc615))
+* Remove clink-flex-prompt submodule ([54da61c](https://github.com/narnaud/clink-terminal/commit/54da61c8eaf470c8ef6e3df9e43a47d83cf70140))
+* Remove default prompt ([517df21](https://github.com/narnaud/clink-terminal/commit/517df21fe4bd4cc32547a30d37b8b393100dfc7c))
+* Update FZF integration to exclude .git directories ([1e90273](https://github.com/narnaud/clink-terminal/commit/1e90273d63a1e048c1af171d937eea25328548d6))
+
 ## 1.0.0 (2025-03-01)
 
 
