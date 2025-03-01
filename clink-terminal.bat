@@ -56,7 +56,7 @@ ssh-agent -s 2>nul
 :::============================================================================
 ::: Change the .inputrc file (the one in this directory)
 set CLINK_INPUTRC=%~dp0
-set CLINK_PATH=%~dp03rdparty\clink-zoxide;%~dp03rdparty\clink-gizmos;%~dp0scripts
+set CLINK_PATH=%~dp03rdparty\clink-zoxide;%~dp03rdparty\clink-gizmos
 
 ::: Finally, inject clink
 clink inject --quiet
