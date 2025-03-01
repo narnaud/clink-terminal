@@ -4,6 +4,3 @@
 [submodule "3rdparty/clink-zoxide"]
 	path = 3rdparty/clink-zoxide
 	url = https://github.com/shunsambongi/clink-zoxide.git
-[submodule "3rdparty/clink-completions"]
-	path = 3rdparty/clink-completions
-	url = https://github.com/vladimir-kotikov/clink-completions.git
