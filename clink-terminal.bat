@@ -9,6 +9,7 @@ doskey clear   = cls
 doskey cp      = %USERPROFILE%\scoop\apps\git\current\usr\bin\cp.exe $*
 doskey mv      = %USERPROFILE%\scoop\apps\git\current\usr\bin\mv.exe $*
 doskey rm      = %USERPROFILE%\scoop\apps\git\current\usr\bin\rm.exe $*
+doskey pwd     = cd
 doskey e       = start %windir%\explorer.exe .
 
 ::: User specific aliases
