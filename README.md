@@ -13,6 +13,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 scoop install git
 scoop bucket add nerd-fonts
+scoop bucket add narnaud https://github.com/narnaud/scoop-bucket
 ```
 
 This will install `scoop` with the main bucket, as well as the `nerd-fonts` bucket (needed for the terminal font we are going to use). You need to install `git` before adding the new bucket.
@@ -20,7 +21,7 @@ This will install `scoop` with the main bucket, as well as the `nerd-fonts` buck
 Then it's time to install all the useful tools used for the terminal:
 
 ```
-scoop install cascadiacode-nf clink bat fd fzf jq ripgrep vim which zoxide
+scoop install cascadiacode-nf clink bat dirx fd fzf jq ripgrep vim which zoxide
 ```
 
 ### Terminal integration
