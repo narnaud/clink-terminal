@@ -21,7 +21,7 @@ This will install `scoop` with the main bucket, as well as the `nerd-fonts` buck
 Then it's time to install all the useful tools used for the terminal:
 
 ```
-scoop install cascadiacode-nf clink bat dirx fd fzf jq ripgrep vim which zoxide
+scoop install cascadiacode-nf clink bat dirx fd fzf ripgrep vim which zoxide
 ```
 
 ### Terminal integration
@@ -76,58 +76,6 @@ The config setup some aliases already, but you are free to add more by creating 
 }
 ```
 
-### Project configuration
-
-The current setup contains a unique tool named `use` (inspired by [PsEnv](https://github.com/KierDugan/PsEnv)), paired with a json file `%USERPROFILE%\.useconfig.json`, allowing you to setup an environment for your project. The json file is looking like this:
-
-```json
-{
-    "msvc2022": {
-        "display": "Microsoft Visual Studio 2022 - x64",
-        "defer": [
-            "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Auxiliary\\Build\\vcvars64.bat"
-        ]
-    },
-    "qt6.7": {
-        "display": "Qt 6.7.0 - MSVC - x64",
-        "set": {
-            "QTDIR": "C:\\Qt\\6.7.0\\msvc2019_64\\"
-        },
-        "append": {
-            "CMAKE_PREFIX_PATH": "C:\\Qt\\6.7.0\\msvc2019_64\\"
-        },
-        "path": [
-            "C:\\Qt\\6.7.0\\msvc2019_64\\bin"
-        ]
-    },
-    "knut": {
-        "display": "Knut",
-        "use": [
-            "msvc2022",
-            "qt6.7"
-        ],
-        "go": "C:\\dev\\knut\\knut"
-    }
-}
-```
-
-The json file contains a list of environments:
-
-- `display`: the string that will be displayed when setting the tool
-- `set`: set a list of environment variables
-- `append`: append value to a list of environment variables
-- `prepend`: prepend value to a list of environment variables
-- `path`: add paths to the `PATH` environment variable
-- `defer`: call one or multiple batch files to finish the setup
-- `use`: set up other environment before setting up this one
-- `go`: go to a particular path at the end of the setup
-
-In the small example, you can see the knut environment is using both the msvc2022 and qt6.7 environments, and will go to the `C:\dev\knut\knut` directory.
-
-![](assets/use.png)
-
-In the screenshot, I'm setting up the `knut` environment with `use knut` (note: there is also completion). You can see the display for the different environments set up, as well as a `󱁤 knut` in the prompt, showing the current encironment set up.
-
 ### Fuzzy finder
 
 `fzf` is integrated all the way into this current terminal configuration. The _default_ shortcuts are:
@@ -159,6 +107,25 @@ It comes with other nice tools:
 - `rg` (ripgrep): recursive search pattern in directories
 - `z` (zoxide): a smarter `cd` command
 
+## Recommendations
+
+Tools you should install:
+
+- [jq](https://jqlang.github.io/jq/): lightweight and flexible command-line JSON processor
+- [use](https://github.com/narnaud/use): command line tool to setup environment defined in a json file
+- [yazi](https://yazi-rs.github.io/): blazing fast terminal file manager written in Rust, based on async I/O
+
+To install those:
+
+```
+scoop install use yazi
+```
+
+`clink-terminal` comes `y` shell wrapper that provides the ability to change the current working directory when exiting Yazi:
+
+- <kbd>Q</kdb> will exit and change the current working directory
+- <kbd>shift</kbd>-<kbd>Q</kbd>` will exit without changing the current working directory
+
 ## 3rd parties
 
 This won't be possible without the help of those giants:
@@ -171,9 +138,8 @@ This won't be possible without the help of those giants:
 - [clink-gizmos](https://github.com/chrisant996/clink-gizmos)
 - [clink-zoxide](https://github.com/shunsambongi/clink-zoxide)
 - [dirx](https://github.com/chrisant996/dirx)
-- [fzf](https://github.com/junegunn/fzf)
 - [fd](https://github.com/sharkdp/fd)
-- [jq](https://jqlang.github.io/jq/)
+- [fzf](https://github.com/junegunn/fzf)
 - [less](https://greenwoodsoftware.com/less/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [scoop](https://github.com/ScoopInstaller/Scoop)
