@@ -1,0 +1,44 @@
+name: Publish
+on:
+  push:
+    tags:
+      - "v*.*.*"
+jobs:
+  publish:
+    name: Publish zip for ${{ matrix.target }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Setup | Checkout
+        uses: actions/checkout@v4
+      - name: Setup | Checkout submodules
+        run: |
+          git submodule update --init --force --depth=1 --recursive -- 3rdparty/*
+      - name: Package | Package [Windows]
+        if: matrix.os == 'windows-latest'
+        run: |
+          7z a clink-terminal.zip * -xr!.*
+      - name: Package | Checksums
+        shell: bash
+        run: openssl dgst -sha256 -r "clink-terminal.zip" | awk '{print $1}' > "clink-terminal.zip.sha256"
+    #   - name: Post Build | Upload artifacts
+    #     uses: actions/upload-artifact@v4
+    #     with:
+    #       name: ${{ matrix.target }}
+    #       path: |
+    #         *.deb
+    #         *.tar.gz
+    #         *.zip
+    #         *.sha256
+      - name: Publish | Add Artifacts to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          token: ${{ secrets.RELEASE_TOKEN }}
+          files: |
+            *.zip
+            *.sha256
