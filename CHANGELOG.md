@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/narnaud/clink-terminal/compare/v1.1.0...v1.1.1) (2025-03-02)
+
+
+### Bug Fixes
+
+* FIx the y starting yazi ([3d76997](https://github.com/narnaud/clink-terminal/commit/3d769979effa300966a8f9ca49605e4614126813))
+
 ## [1.1.0](https://github.com/narnaud/clink-terminal/compare/v1.0.0...v1.1.0) (2025-03-01)
 
 
