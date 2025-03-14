@@ -10,6 +10,8 @@ The easiest way to get started is to install [scoop](https://scoop.sh/) for all 
 
 1. Install Scoop
 
+Open a powershell terminal:
+
 ```pwsh
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
@@ -17,14 +19,14 @@ Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 
 2. Install a nerd font for the terminal (Cascadia Code here, but any other nerd font will work)
 
-```
+```batch
 scoop bucket add nerd-fonts
 scoop install cascadiacode-nf
 ```
 
 3. Install **clink-terminal**
 
-```
+```batch
 scoop bucket add narnaud https://github.com/narnaud/scoop-bucket
 scoop install clink-terminal narnaud/clink-completions narnaud/clink-flex-prompt
 ```
@@ -57,7 +59,7 @@ The first time you start **clink-terminal**, it will show something like that:
 
 To configure a new prompt, run the configruation wizard with:
 
-```
+```batch
 flexprompt configure
 ```
 
@@ -103,6 +105,19 @@ It's also used for more advanced views (`Ctrl+\` will change the preview positio
 
 ![](assets/fzf-git-branches.png)
 
+### Terminal title
+
+If you set the `terminal.update_title` settings to true, you can change the terminal title based on the current folder and git branch.
+
+```batch
+clink set terminal.update_title true
+```
+
+Once done, the terminal title will change:
+
+- if it's a normal folder: "folder_name"
+- if it's a git folder: "git_topfolder_name - [branch_name]"
+
 ### Other tools
 
 It comes with other nice tools:
@@ -121,7 +136,7 @@ Tools you should install:
 
 To install those:
 
-```
+```batch
 scoop install use yazi
 ```
 
