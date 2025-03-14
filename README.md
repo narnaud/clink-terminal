@@ -160,6 +160,7 @@ This won't be possible without the help of those giants:
 - [dirx](https://github.com/chrisant996/dirx)
 - [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)
+- [jq](https://jqlang.github.io/jq/)
 - [less](https://greenwoodsoftware.com/less/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [scoop](https://github.com/ScoopInstaller/Scoop)
