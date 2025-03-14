@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/narnaud/clink-terminal/compare/v1.1.1...v1.2.0) (2025-03-14)
+
+
+### Features
+
+* Add update title script ([685b417](https://github.com/narnaud/clink-terminal/commit/685b417a753d048e7f1f92048ba69711d1ac0811))
+
 ## [1.1.1](https://github.com/narnaud/clink-terminal/compare/v1.1.0...v1.1.1) (2025-03-02)
 
 
