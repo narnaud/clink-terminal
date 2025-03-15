@@ -3,8 +3,8 @@
 :::============================================================================
 ::: Aliases
 :::============================================================================
-doskey ls      = dirx --icons -2 -v -h -oga $*
-doskey ll      = dirx --icons -a -oga $*
+doskey ls      = dirx --icons -2 -v -h -oga -Qvsh $*
+doskey ll      = dirx --icons -a -oga -Qvsh $*
 doskey clear   = cls
 doskey cp      = %USERPROFILE%\scoop\apps\git\current\usr\bin\cp.exe $*
 doskey mv      = %USERPROFILE%\scoop\apps\git\current\usr\bin\mv.exe $*
