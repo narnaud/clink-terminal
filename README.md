@@ -37,6 +37,8 @@ scoop install clink-terminal narnaud/clink-completions narnaud/clink-flex-prompt
 2. Download the latest `clink-terminal.zip` file
 3. Extract the files from it into a directory.
 
+You also need to install some dependencies, see the list at the bottom.
+
 ## Terminal integration
 
 - open the Terminal
@@ -70,17 +72,23 @@ flexprompt configure
 
 ### Aliases
 
-The configuration has  some aliases already, but you are free to add more by creating a `%USERPROFILE%\.alias.json`, here is an example file:
+The configuration has  some aliases already, but you are free to add more by creating a `%USERPROFILE%\.alias.yaml`, here is an example file:
 
-```json
-{
-    "l": "git log --graph --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit --date=relative",
-    "s": "git status",
-    "d": "git diff",
-    "more": "bat -f -p",
-    "np": "\"C:\\Program Files\\Notepad++\\notepad++.exe\"",
-    "xhost": "sudo code C:\\Windows\\tem32\\Drivers\\etc\\hosts",
-}
+```yaml
+# Git aliases
+l: git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=r
+elative
+s: git status -sb
+d: git diff
+
+# Some cli tools
+more: bat -f -p
+lg: lazygit -sm half
+top: btm -b
+
+# Edit configuration files
+xhost: sudo helix C:\Windows\tem32\Drivers\etc\hosts
+alias: helix %USERPROFILE%\.alias.yaml
 ```
 
 ### Fuzzy finder
@@ -163,4 +171,5 @@ This won't be possible without the help of those giants:
 - [less](https://greenwoodsoftware.com/less/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [scoop](https://github.com/ScoopInstaller/Scoop)
+- [yq](https://github.com/mikefarah/yq)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
