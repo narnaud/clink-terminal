@@ -116,7 +116,6 @@ It comes with other nice tools:
 
 Tools you should install:
 
-- [jq](https://jqlang.github.io/jq/): lightweight and flexible command-line JSON processor
 - [use](https://github.com/narnaud/use): command line tool to setup environment defined in a json file
 - [yazi](https://yazi-rs.github.io/): blazing fast terminal file manager written in Rust, based on async I/O
 
@@ -129,7 +128,7 @@ scoop install use yazi
 `clink-terminal` comes `y` shell wrapper that provides the ability to change the current working directory when exiting Yazi:
 
 - <kbd>Q</kdb> will exit and change the current working directory
-- <kbd>shift</kbd>-<kbd>Q</kbd>` will exit without changing the current working directory
+- <kbd>shift</kbd>-<kbd>Q</kbd> will exit without changing the current working directory
 
 ## Third parties
 
@@ -145,6 +144,7 @@ This won't be possible without the help of those giants:
 - [dirx](https://github.com/chrisant996/dirx)
 - [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)
+- [jq](https://jqlang.github.io/jq/)
 - [less](https://greenwoodsoftware.com/less/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [scoop](https://github.com/ScoopInstaller/Scoop)
