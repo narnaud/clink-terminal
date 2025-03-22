@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/narnaud/clink-terminal/compare/v1.1.0...v1.2.0) (2025-03-22)
+
+
+### Features
+
+* Add update title script ([0e29cdf](https://github.com/narnaud/clink-terminal/commit/0e29cdf196bc3053998d1e9dda6d37fa469bcc25))
+* Suppress drive/header/summary from ls/ll ([598ad4f](https://github.com/narnaud/clink-terminal/commit/598ad4f309890985611bc0e0a3172478f17f5c64))
+
 ## [1.1.0](https://github.com/narnaud/clink-terminal/compare/v1.0.0...v1.1.0) (2025-03-22)
 
 
