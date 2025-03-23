@@ -13,7 +13,7 @@ doskey pwd     = cd
 doskey e       = start %windir%\explorer.exe .
 
 ::: User specific aliases
-if exist %USERPROFILE%\.alias.json (
+if exist %USERPROFILE%\.alias.yaml (
     for /f "tokens=1,2 delims=@" %%a in ('yq -o props "... comments = """"" --properties-separator="=" %USERPROFILE%\.alias.yaml') do (
         if "%%a%" NEQ "" (
             doskey %%a $*
