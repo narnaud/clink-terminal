@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/narnaud/clink-terminal/compare/v2.0.0...v2.1.0) (2025-03-23)
+
+
+### Features
+
+* Add preview command ([30e12ad](https://github.com/narnaud/clink-terminal/commit/30e12adc89dde778203dbb46a87eec1d666ba796))
+
 ## [2.0.0](https://github.com/narnaud/clink-terminal/compare/v1.1.0...v2.0.0) (2025-03-23)
 
 
