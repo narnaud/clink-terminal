@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1](https://github.com/narnaud/clink-terminal/compare/v2.1.0...v2.1.1) (2025-03-23)
+
+
+### Bug Fixes
+
+* **alias:** We expect a yaml file now, not a json file ([7bf7adb](https://github.com/narnaud/clink-terminal/commit/7bf7adb69c0ec48edaeb9aa2288820260acb794b))
+
 ## [2.1.0](https://github.com/narnaud/clink-terminal/compare/v2.0.0...v2.1.0) (2025-03-23)
 
 
