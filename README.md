@@ -103,13 +103,16 @@ alias: helix %USERPROFILE%\.alias.yaml
 
 ![](assets/fzf-files.png)
 
-It's also used for more advanced views (`Ctrl+\` will change the preview position or hide it):
+### Fuzzy finder views
+
+`clink-terminal` also comes with more advanced views (`Ctrl+\` will change the preview position or hide it):
 
 - <kdb>Ctrl</kdb>+<kdb>E</kdb>: explorer like view, with directory or file previews
-- <kdb>Ctrl</kdb>+<kdb>G</kdb>,<kdb>Ctr</kdb>+<kdb>F</kdb>: git status, with diff for each file
-- <kdb>Ctrl</kdb>+<kdb>G</kdb>,<kdb>Ctr</kdb>+<kdb>S</kdb>: git stashes list, with diff for each file
-- <kdb>Ctrl</kdb>+<kdb>G</kdb>,<kdb>Ctr</kdb>+<kdb>H</kdb>: git log, with diff for each hash
-- <kdb>Ctrl</kdb>+<kdb>G</kdb>,<kdb>Ctr</kdb>+<kdb>B</kdb>: git branches, with log for each branch
+  - if your terminal support it, set `CLINK_FZF_PREVIEW_SIXELS=1` for better image support
+- <kdb>Ctrl</kdb>+<kdb>G</kdb>,<kdb>Ctr</kdb>+<kdb>F</kdb> (***G***it ***F***iles): git status, with diff for each file
+- <kdb>Ctrl</kdb>+<kdb>G</kdb>,<kdb>Ctr</kdb>+<kdb>S</kdb> (***G***it ***S***tashes): git stashes list, with diff for each file
+- <kdb>Ctrl</kdb>+<kdb>G</kdb>,<kdb>Ctr</kdb>+<kdb>H</kdb> (***G***it ***H***istory): git log, with diff for each hash
+- <kdb>Ctrl</kdb>+<kdb>G</kdb>,<kdb>Ctr</kdb>+<kdb>B</kdb> (***G***it ***B***ranches): git branches, with log for each branch
 
 ![](assets/fzf-git-branches.png)
 
@@ -159,6 +162,7 @@ This won't be possible without the help of those giants:
 
 - [bat](https://github.com/sharkdp/bat)
 - [cascadiacode](https://github.com/microsoft/cascadia-code)
+- [chafa](https://hpjansson.org/chafa)
 - [clink](https://chrisant996.github.io/clink/)
 - [clink-completions](https://github.com/vladimir-kotikov/clink-completions)
 - [clink-flex-prompt](https://github.com/chrisant996/clink-flex-prompt)
@@ -166,10 +170,10 @@ This won't be possible without the help of those giants:
 - [clink-zoxide](https://github.com/shunsambongi/clink-zoxide)
 - [dirx](https://github.com/chrisant996/dirx)
 - [fd](https://github.com/sharkdp/fd)
-- [fzf](https://github.com/junegunn/fzf)
+- [fzf](https://junegunn.github.io/fzf/)
 - [jq](https://jqlang.github.io/jq/)
 - [less](https://greenwoodsoftware.com/less/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
-- [scoop](https://github.com/ScoopInstaller/Scoop)
-- [yq](https://github.com/mikefarah/yq)
+- [scoop](https://scoop.sh/)
+- [yq](https://mikefarah.gitbook.io/yq)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)

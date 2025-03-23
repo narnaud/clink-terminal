@@ -46,6 +46,9 @@ set FZF_CTRL_T_COMMAND=dirx.exe /b /s /X:d /a:-s-h --bare-relative --icons=alway
 set FZF_ALT_C_COMMAND=dirx.exe /b /s /X:d /a:d-s-h --bare-relative --icons=always --escape-codes=always --utf8 --ignore-glob=.git/** $dir
 set FZF_ICON_WIDTH=2
 
+::: Does not work for now on Windows Terminal
+::: set CLINK_FZF_PREVIEW_SIXELS=1
+
 :::============================================================================
 ::: Start ssh-agent
 :::============================================================================

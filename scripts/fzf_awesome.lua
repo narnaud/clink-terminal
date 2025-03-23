@@ -153,7 +153,9 @@ end
 -- Requires both dirx and bat to be installed and in the PATH.
 function fzf_explorer(rl_buffer, line_state)
     local command = 'dirx.exe /b /s /X:d /a:-s-h --bare-relative --icons=always --escape-codes=always --utf8 --ignore-glob=.git/**'
-    local preview = 'if exist {-1}\\* (echo [94mDirectory:[0m {-1} & echo. & dirx.exe /b /X:d /a:-s-h --bare-relative --level=3 --tree --icons=always --escape-codes=always --utf8 --ignore-glob=.git/** {-1}) else (echo [33mFile:[0m {-1} & echo. & bat --color=always --style=changes,numbers --line-range :500 {-1})'
+
+    local dir = get_script_dir()
+    local preview = path.join(dir, "fzf-preview.cmd")..' {+2..}'
 
     local fzf_command = get_fzf('horizontal', '📁 Explorer', 'ALT-E (Edit in VS Code)', preview)
     local open_bind = ' --bind="alt-e:execute-silent(code {+2..})"'
