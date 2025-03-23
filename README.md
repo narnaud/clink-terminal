@@ -70,18 +70,30 @@ flexprompt configure
 > [!NOTE]
 > Probably one of the best feature of the prompt is that the git status is asynchrone, so you never have to wait for it to finish before being able to enter a command.
 
-### Aliases
+### Aliases and Commands
 
 `clink-terminal` comes with some handy aliases:
+
+Unix aliases:
 
 - `ls`: our beloved list command
 - `ll`: same, but with details
 - `cp`: copy a file (using the unix command from git)
 - `mv`: move a file (using the unix command from git)
 - `rm`: remove a file (using the unix command from git)
-- `e`: open the Windows file explorer with the current folder
 - `clear`: clear the console
 - `pwd`: display the current directory
+
+New commands:
+
+- `e`: open the Windows file explorer with the current folder
+- `preview`: show a preview of the file or folder passed
+  - use `dirx` for a folder, and diplay a tree
+  - use `chafa` for an image
+  - default to `bat` otherwise
+- `y`: run `yazi` file manager (need to be installed)
+  - <kbd>Q</kdb> will exit without changing the current working directory
+  - <kbd>shift</kbd>-<kbd>Q</kbd> will exit and change the current working directory
 
 ### Custom aliases
 
@@ -166,11 +178,6 @@ To install those:
 ```batch
 scoop install use yazi
 ```
-
-`clink-terminal` comes `y` shell wrapper that provides the ability to change the current working directory when exiting Yazi:
-
-- <kbd>Q</kdb> will exit and change the current working directory
-- <kbd>shift</kbd>-<kbd>Q</kbd> will exit without changing the current working directory
 
 ## Third parties
 
