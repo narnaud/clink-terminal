@@ -72,6 +72,19 @@ flexprompt configure
 
 ### Aliases
 
+`clink-terminal` comes with some handy aliases:
+
+- `ls`: our beloved list command
+- `ll`: same, but with details
+- `cp`: copy a file (using the unix command from git)
+- `mv`: move a file (using the unix command from git)
+- `rm`: remove a file (using the unix command from git)
+- `e`: open the Windows file explorer with the current folder
+- `clear`: clear the console
+- `pwd`: display the current directory
+
+### Custom aliases
+
 The configuration has  some aliases already, but you are free to add more by creating a `%USERPROFILE%\.alias.yaml`, here is an example file:
 
 ```yaml
@@ -93,7 +106,7 @@ alias: helix %USERPROFILE%\.alias.yaml
 
 ### Fuzzy finder
 
-`fzf` is integrated all the way into this current terminal configuration. The _default_ shortcuts are:
+`fzf` is integrated all the way into this current terminal configuration. The *default* shortcuts are:
 
 - <kdb>Ctrl</kdb>+<kdb>T</kdb>: lists files recursively; choose one or multiple to insert them,
 - <kdb>Ctrl</kdb>+<kdb>R</kdb>: lists history entries; choose one to insert it,
