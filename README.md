@@ -104,6 +104,9 @@ xhost: sudo helix C:\Windows\tem32\Drivers\etc\hosts
 alias: helix %USERPROFILE%\.alias.yaml
 ```
 
+> [!NOTE]
+> No need to add the `$*` at the end, it's automatically added for you.
+
 ### Fuzzy finder
 
 `fzf` is integrated all the way into this current terminal configuration. The *default* shortcuts are:
