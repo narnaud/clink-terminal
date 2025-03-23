@@ -187,7 +187,7 @@ function fzf_git_status(rl_buffer, line_state)
     local dir = get_script_dir()
     local preview = path.join(dir, "fzf_git-status-file.cmd")..' {+2..}'
 
-    local fzf_command = get_fzf('horizontal', '🏠 Git status', 'CTRL-A (All) / ALT-E (Edit) / ALT-A (Add) / ALT-R (Restore)', preview)
+    local fzf_command = get_fzf('horizontal', '🏠 Git status', 'CTRL-A (Select All) / ALT-A (Add) / ALT-E (Edit) / ALT-R (Restore)', preview)
     local select_all_bind = ' --bind="ctrl-a:select-all"'
     local open_bind = ' --bind="alt-e:execute-silent(code {+2..})"'
     local add_bind = ' --bind="alt-a:execute-silent(git add {+2..})+down+reload('..command..')"'
@@ -218,8 +218,8 @@ function fzf_git_stashes(rl_buffer, line_state)
     local command = 'git stash list --color=always'
     local preview = 'git show --color=always {1}'
 
-    local fzf_command = get_fzf('horizontal', '📦 Git stashes', 'ALT-X (Drop stash)', preview)
-    local drop_bind = ' --bind="alt-x:execute-silent(git stash drop {1})+reload('..command..')"'
+    local fzf_command = get_fzf('horizontal', '📦 Git stashes', 'ALT-D (Drop stash)', preview)
+    local drop_bind = ' --bind="alt-d:execute-silent(git stash drop {1})+reload('..command..')"'
     local first, last, has_quote, delimit = get_word_insert_bounds(line_state) -- luacheck: no unused
 
     local r = io.popen(command..' 2>nul | '..fzf_command..drop_bind..' -d: ')
@@ -272,9 +272,9 @@ function fzf_git_branches(rl_buffer, line_state)
 
     local preview = path.join(dir, "fzf_git-log-helper.cmd")..' {1}'
 
-    local fzf_command = get_fzf('vertical', '🌳 Git branches', 'CTRL-A (Show all branches) / ALT-X (Drop branch)', preview)
+    local fzf_command = get_fzf('vertical', '🌳 Git branches', 'CTRL-A (Show all branches) / ALT-C (Checkout) / ALT-D (Drop)', preview)
     local select_all_bind = ' --bind="ctrl-a:change-border-label(🌳 Git all branches)+reload('..command_all:gsub('"', '"""')..')"'
-    local drop_bind = ' --bind="alt-x:execute-silent(git branch -D {1})+reload('..command:gsub('"', '"""')..')"'
+    local drop_bind = ' --bind="alt-d:execute-silent(git branch -D {1})+reload('..command:gsub('"', '"""')..')"'
     local checkout_bind = ' --bind="alt-c:execute-silent(git chekout {1})+reload('..command:gsub('"', '"""')..')"'
     local first, last, has_quote, delimit = get_word_insert_bounds(line_state) -- luacheck: no unused
 
