@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.0.0](https://github.com/narnaud/clink-terminal/compare/v1.1.0...v2.0.0) (2025-03-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* Use a yaml file for aliases
+
+### Features
+
+* Add image support to fzf-explorer via chafa ([75fcfa2](https://github.com/narnaud/clink-terminal/commit/75fcfa21586ca289a9706bca4e077f286ef77025))
+* Add update title script ([0e29cdf](https://github.com/narnaud/clink-terminal/commit/0e29cdf196bc3053998d1e9dda6d37fa469bcc25))
+* Suppress drive/header/summary from ls/ll ([598ad4f](https://github.com/narnaud/clink-terminal/commit/598ad4f309890985611bc0e0a3172478f17f5c64))
+* Update fzf-git shortcuts ([f8c9b25](https://github.com/narnaud/clink-terminal/commit/f8c9b25df8eeefad1a62798cef29067b36bbb775))
+
+
+### Code Refactoring
+
+* Use a yaml file for aliases ([17b8ab8](https://github.com/narnaud/clink-terminal/commit/17b8ab8911361d6e8b032ec858a7c46850bc6d57))
+
 ## [1.1.0](https://github.com/narnaud/clink-terminal/compare/v1.0.0...v1.1.0) (2025-03-22)
 
 
