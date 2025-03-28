@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.2](https://github.com/narnaud/clink-terminal/compare/v2.1.1...v2.1.2) (2025-03-28)
+
+
+### Bug Fixes
+
+* Terminal title should display HEAD if not on branch ([be5c24a](https://github.com/narnaud/clink-terminal/commit/be5c24ac818fdc14364e7fd01dc907583d7e5698))
+
 ## [2.1.1](https://github.com/narnaud/clink-terminal/compare/v2.1.0...v2.1.1) (2025-03-23)
 
 
