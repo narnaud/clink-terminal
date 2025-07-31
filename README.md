@@ -59,7 +59,7 @@ Also go to the `Defaults` and change the Appearance>Font face to `CaskaydiaCove 
 The first time you start **clink-terminal**, it will show something like that:
 ![](assets/prompt-start.png)
 
-To configure a new prompt, run the configruation wizard with:
+To configure a new prompt, run the configuration wizard with:
 
 ```batch
 flexprompt configure
@@ -68,7 +68,7 @@ flexprompt configure
 ![](assets/prompt.png)
 
 > [!NOTE]
-> Probably one of the best feature of the prompt is that the git status is asynchrone, so you never have to wait for it to finish before being able to enter a command.
+> Probably one of the best features of the prompt is that the git status is asynchronous, so you never have to wait for it to finish before being able to enter a command.
 
 ### Aliases and Commands
 
@@ -97,7 +97,7 @@ New commands:
 
 ### Custom aliases
 
-The configuration has  some aliases already, but you are free to add more by creating a `%USERPROFILE%\.alias.yaml`, here is an example file:
+The configuration has some aliases already, but you are free to add more by creating a `%USERPROFILE%\.alias.yaml`, here is an example file:
 
 ```yaml
 # Git aliases
