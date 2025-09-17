@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.3](https://github.com/narnaud/clink-terminal/compare/v2.1.2...v2.1.3) (2025-09-17)
+
+
+### Bug Fixes
+
+* Automatically add /D to cd ([75cd5dd](https://github.com/narnaud/clink-terminal/commit/75cd5ddb5971119ddd0c97243f83d017d3c11b04))
+
 ## [2.1.2](https://github.com/narnaud/clink-terminal/compare/v2.1.1...v2.1.2) (2025-03-28)
 
 
