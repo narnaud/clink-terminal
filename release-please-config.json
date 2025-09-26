@@ -1,0 +1,22 @@
+{
+	"packages": {
+    	".": {
+    		"release-type": "simple",
+			"bump-minor-pre-major": true,
+			"changelog-sections": [
+				{"type":"feat","section":"Features 🚀","hidden":false},
+				{"type":"feature","section":"Features 🚀","hidden":false},
+				{"type":"fix","section":"Bug Fixes 🐞","hidden":false},
+				{"type":"revert","section":"Reverts ⎌","hidden":false},
+				{"type":"perf","section":"Performance Improvements ⚡","hidden":false},
+				{"type":"docs","section":"Documentation 📚","hidden":false},
+				{"type":"style","section":"Styles ✨","hidden":false},
+				{"type":"refactor","section":"Code Refactoring 🛠️","hidden":false},
+				{"type":"test","section":"Tests 🧪","hidden":false},
+				{"type":"build","section":"Other 🧰","hidden":true},
+				{"type":"chore","section":"Other 🧰","hidden":false},
+				{"type":"ci","section":"Other 🧰","hidden":true}
+			]
+		}
+	}
+}
