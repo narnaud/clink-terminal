@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.1.3](https://github.com/narnaud/clink-terminal/compare/v2.1.2...v2.1.3) (2025-09-26)
+
+
+### Other 🧰
+
+* Update clink-gizmos ([d540b39](https://github.com/narnaud/clink-terminal/commit/d540b394c4e206d5e11c74f31427621898b1dba3))
+* update clink-gizmos and clink-zoxide ([c65de21](https://github.com/narnaud/clink-terminal/commit/c65de21715316c7c4ccf4ad9d54f03fe1b032429))
+* update pre-commit hooks ([a9ebc20](https://github.com/narnaud/clink-terminal/commit/a9ebc20a424c6a9c1409eea39fccf54efc377b90))
+
 ## [2.1.2](https://github.com/narnaud/clink-terminal/compare/v2.1.1...v2.1.2) (2025-03-28)
 
 
