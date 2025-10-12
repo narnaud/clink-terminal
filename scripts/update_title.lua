@@ -20,7 +20,7 @@ end
 
 -- Return the current git branch name
 local function get_git_branch()
-    local line = io.popen("git rev-parse --abbrev-ref HEAD || git rev-parse HEAD 2>nul"):read("*a")
+    local line = io.popen("git branch --show-current 2>nul"):read("*a")
     local branch = line:match("(.+)\n")
     if branch then
         return branch
