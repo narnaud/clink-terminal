@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.4](https://github.com/narnaud/clink-terminal/compare/v2.1.3...v2.1.4) (2025-10-12)
+
+
+### Bug Fixes 🐞
+
+* Fix update-title script to avoid error on new git repo ([d31594d](https://github.com/narnaud/clink-terminal/commit/d31594d8085a91c24d3c8641d015ff35e9e4dbe5))
+
 ## [2.1.3](https://github.com/narnaud/clink-terminal/compare/v2.1.2...v2.1.3) (2025-09-26)
 
 
