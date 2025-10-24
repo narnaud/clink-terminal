@@ -24,6 +24,8 @@ local function get_git_branch()
     local branch = line:match("(.+)\n")
     if branch then
         return branch
+    else
+        return "HEAD detached"
     end
 end
 
