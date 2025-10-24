@@ -6,10 +6,11 @@
 doskey ls      = dirx --icons -2 -v -h -oga -Qvsh $*
 doskey ll      = dirx --icons -a -oga -Qvsh $*
 doskey clear   = cls
+doskey cd      = cd /D $*
 doskey cp      = %USERPROFILE%\scoop\apps\git\current\usr\bin\cp.exe $*
 doskey mv      = %USERPROFILE%\scoop\apps\git\current\usr\bin\mv.exe $*
 doskey rm      = %USERPROFILE%\scoop\apps\git\current\usr\bin\rm.exe $*
-doskey pwd     = cd
+doskey pwd     = chdir
 doskey e       = start %windir%\explorer.exe .
 
 ::: User specific aliases
