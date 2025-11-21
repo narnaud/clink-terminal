@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.0](https://github.com/narnaud/clink-terminal/compare/v2.1.4...v2.2.0) (2025-11-21)
+
+
+### Features ✨
+
+* Add a `cd` alias to `cd /D` (change drive if needed) ([de2b61e](https://github.com/narnaud/clink-terminal/commit/de2b61ece666ad6d267f3e8e6962ed34b768e4c5))
+* Change location of aliases files (old one is also kept for compatibility) ([a74ef5b](https://github.com/narnaud/clink-terminal/commit/a74ef5b771049781ba36fbbe332e8faf94338e8e))
+
+
+### Bug Fixes 🐞
+
+* **title:** Prevents error message with detached HEAD ([18c85c3](https://github.com/narnaud/clink-terminal/commit/18c85c391f2f273c40741d7abc4f51129254b68b))
+
 ## [2.1.4](https://github.com/narnaud/clink-terminal/compare/v2.1.3...v2.1.4) (2025-10-12)
 
 
