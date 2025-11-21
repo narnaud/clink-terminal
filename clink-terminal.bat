@@ -14,8 +14,12 @@ doskey pwd     = chdir
 doskey e       = start %windir%\explorer.exe .
 
 ::: User specific aliases
-if exist %USERPROFILE%\.alias.yaml (
-    for /f "tokens=1,2 delims=@" %%a in ('yq -o props "... comments = """"" --properties-separator="=" %USERPROFILE%\.alias.yaml') do (
+set ALIAS_FILE=%USERPROFILE%\.config\.alias.yaml
+if not exist %ALIAS_FILE% (
+    set ALIAS_FILE=%USERPROFILE%\.alias.yaml
+)
+if exist %ALIAS_FILE% (
+    for /f "tokens=1,2 delims=@" %%a in ('yq -o props "... comments = """"" --properties-separator="=" %ALIAS_FILE%') do (
         if "%%a%" NEQ "" (
             doskey %%a $*
         )

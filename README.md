@@ -97,7 +97,7 @@ New commands:
 
 ### Custom aliases
 
-The configuration has some aliases already, but you are free to add more by creating a `%USERPROFILE%\.alias.yaml`, here is an example file:
+The configuration has some aliases already, but you are free to add more by creating a `%USERPROFILE%\.config\alias.yaml`, here is an example file:
 
 ```yaml
 # Git aliases
@@ -113,11 +113,12 @@ top: btm -b
 
 # Edit configuration files
 xhost: sudo helix C:\Windows\tem32\Drivers\etc\hosts
-alias: helix %USERPROFILE%\.alias.yaml
+alias: helix %USERPROFILE%\.config\alias.yaml
 ```
 
 > [!NOTE]
-> No need to add the `$*` at the end, it's automatically added for you.
+> - No need to add the `$*` at the end, it's automatically added for you.
+> - For compatibilty reason, aliases are also read in `%USERPROFILE%\.alias.yaml`, if the first one is not found.
 
 ### Fuzzy finder
 
