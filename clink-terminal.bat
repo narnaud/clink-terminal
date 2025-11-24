@@ -14,7 +14,7 @@ doskey pwd     = chdir
 doskey e       = start %windir%\explorer.exe .
 
 ::: User specific aliases
-set ALIAS_FILE=%USERPROFILE%\.config\.alias.yaml
+set ALIAS_FILE=%USERPROFILE%\.config\alias.yaml
 if not exist %ALIAS_FILE% (
     set ALIAS_FILE=%USERPROFILE%\.alias.yaml
 )
