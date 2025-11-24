@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/narnaud/clink-terminal/compare/v2.2.0...v2.2.1) (2025-11-24)
+
+
+### Bug Fixes 🐞
+
+* Fix alias file path (oups!) ([1b6a3ee](https://github.com/narnaud/clink-terminal/commit/1b6a3eeb281841c58f07cdd6d0be7d5213b3eb47))
+
 ## [2.2.0](https://github.com/narnaud/clink-terminal/compare/v2.1.4...v2.2.0) (2025-11-21)
 
 
