@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.2](https://github.com/narnaud/clink-terminal/compare/v2.2.1...v2.2.2) (2025-12-03)
+
+
+### Other
+
+* update clink-gizmos ([1643c43](https://github.com/narnaud/clink-terminal/commit/1643c430f2b6960fc3a410ff463b73f8b82ff843))
+
 ## [2.2.1](https://github.com/narnaud/clink-terminal/compare/v2.2.0...v2.2.1) (2025-11-24)
 
 
