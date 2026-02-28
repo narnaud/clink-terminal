@@ -10,8 +10,6 @@ repos:
       - id: check-json
       - id: check-yaml
         args: [--allow-multiple-documents]
-      - id: pretty-format-json
-        args: [--autofix, --no-sort-keys, --indent=4]
   - repo: https://github.com/compilerla/conventional-pre-commit
     rev: v4.2.0
     hooks:
