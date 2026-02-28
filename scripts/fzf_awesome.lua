@@ -275,7 +275,7 @@ function fzf_git_branches(rl_buffer, line_state)
     local fzf_command = get_fzf('vertical', '🌳 Git branches', 'CTRL-A (Show all branches) / ALT-C (Checkout) / ALT-D (Drop)', preview)
     local select_all_bind = ' --bind="ctrl-a:change-border-label(🌳 Git all branches)+reload('..command_all:gsub('"', '"""')..')"'
     local drop_bind = ' --bind="alt-d:execute-silent(git branch -D {1})+reload('..command:gsub('"', '"""')..')"'
-    local checkout_bind = ' --bind="alt-c:execute-silent(git chekout {1})+reload('..command:gsub('"', '"""')..')"'
+    local checkout_bind = ' --bind="alt-c:execute-silent(git checkout {1})+reload('..command:gsub('"', '"""')..')"'
     local first, last, has_quote, delimit = get_word_insert_bounds(line_state) -- luacheck: no unused
 
     local r = io.popen(command..' 2>nul | '..fzf_command..select_all_bind..drop_bind..checkout_bind..' --multi --no-sort')

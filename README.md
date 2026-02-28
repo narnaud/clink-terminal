@@ -17,14 +17,14 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 ```
 
-2. Install a nerd font for the terminal (Cascadia Code here, but any other nerd font will work)
+1. Install a nerd font for the terminal (Cascadia Code here, but any other nerd font will work)
 
 ```batch
 scoop bucket add nerd-fonts
 scoop install cascadiacode-nf
 ```
 
-3. Install **clink-terminal**
+1. Install **clink-terminal**
 
 ```batch
 scoop bucket add narnaud https://github.com/narnaud/scoop-bucket
@@ -88,7 +88,7 @@ New commands:
 
 - `e`: open the Windows file explorer with the current folder
 - `preview`: show a preview of the file or folder passed
-  - use `dirx` for a folder, and diplay a tree
+  - use `dirx` for a folder, and display a tree
   - use `chafa` for an image
   - default to `bat` otherwise
 - `y`: run `yazi` file manager (need to be installed)
@@ -117,8 +117,9 @@ alias: helix %USERPROFILE%\.config\alias.yaml
 ```
 
 > [!NOTE]
+>
 > - No need to add the `$*` at the end, it's automatically added for you.
-> - For compatibilty reason, aliases are also read in `%USERPROFILE%\.alias.yaml`, if the first one is not found.
+> - For compatibility reason, aliases are also read in `%USERPROFILE%\.alias.yaml`, if the first one is not found.
 
 ### Fuzzy finder
 
