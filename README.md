@@ -138,21 +138,21 @@ alias: helix %USERPROFILE%\.config\alias.yaml
 
 `clink-terminal` also comes with more advanced views (`Ctrl+\` will change the preview position or hide it):
 
-- <kdb>Ctrl</kdb>+<kdb>E</kdb>: Show a fzf filetered view with files and directory matching search term
+- <kdb>Ctrl</kdb>+<kdb>E</kdb>: Show a fzf filtered view with files and directory matching search term
 
 - <kdb>Ctrl</kdb>+<kdb>X,<kdb>Ctr</kdb>+<kdb>F</kdb>: Show a fzf filtered view with files matching search term
 
 - <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>?</kbd>: Show key bindings for fzf_git
-- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>F</kbd>: (***G***it ***F***iles) Use fzf for Files
-- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>B</kbd>: (***G***it ***B***ranches) Use fzf for Branches
-- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>T</kbd>: (***G***it ***T***ags) Use fzf for Tags
-- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>R</kbd>: (***G***it ***R***emotes) Use fzf for Remotes
-- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>H</kbd>: (***G***it ***H***ashes) Use fzf for commit Hashes (log)
-- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>S</kbd>: (***G***it ***S***tashes) Use fzf for Stashes
-- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>L</kbd>: (***G***it ref***L***ogs)Use fzf for reflogs
-- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>W</kbd>: (***G***it ***W***oktrees) Use fzf for Worktrees
-- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>E</kbd>: (***G***it ***E***ach ref) Use fzf for Each ref (git for-each-ref)
-- <kbd>Ctrl</kbd>+<kbd>X</kbd>,<kbd>Ctrl</kbd>+<kbd>F</kbd>: (***G***it ***C***hanges) Use fzf for Status with diff
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>F</kbd>: (Git Files) Use fzf for Files
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>B</kbd>: (Git Branches) Use fzf for Branches
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>T</kbd>: (Git Tags) Use fzf for Tags
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>R</kbd>: (Git Remotes) Use fzf for Remotes
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>H</kbd>: (Git Hashes) Use fzf for commit Hashes (log)
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>S</kbd>: (Git Stashes) Use fzf for Stashes
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>L</kbd>: (Git refLogs)Use fzf for refLogs
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>W</kbd>: (Git Worktrees) Use fzf for Worktrees
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>E</kbd>: (Git Each ref) Use fzf for Each ref (git for-each-ref)
+- <kbd>Ctrl</kbd>+<kbd>X</kbd>,<kbd>Ctrl</kbd>+<kbd>C</kbd>: (Git Changes) Use fzf for local Changes with diff
 
 > if your terminal support it, set `CLINK_FZF_PREVIEW_SIXELS=1` for better image support
 
