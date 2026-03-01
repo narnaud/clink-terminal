@@ -130,6 +130,7 @@ alias: helix %USERPROFILE%\.config\alias.yaml
 - <kdb>Alt</kdb>+<kdb>C</kdb>: lists subdirectories; choose one to 'cd /d' to it,
 - <kdb>Alt</kdb>+<kdb>B</kdb>: lists key bindings; choose one to invoke it,
 - <kdb>Ctrl</kdb>+<kdb>Space</kdb>: uses fzf to filter match completions (and supports '**' for recursive)
+- <kbd>Tab</kbd>: Tab uses fzf to filter match completions, but only when preceded by '**' (recursive).
 
 ![](assets/fzf-files.png)
 
@@ -137,12 +138,23 @@ alias: helix %USERPROFILE%\.config\alias.yaml
 
 `clink-terminal` also comes with more advanced views (`Ctrl+\` will change the preview position or hide it):
 
-- <kdb>Ctrl</kdb>+<kdb>E</kdb>: explorer like view, with directory or file previews
-  - if your terminal support it, set `CLINK_FZF_PREVIEW_SIXELS=1` for better image support
-- <kdb>Ctrl</kdb>+<kdb>G</kdb>,<kdb>Ctr</kdb>+<kdb>F</kdb> (***G***it ***F***iles): git status, with diff for each file
-- <kdb>Ctrl</kdb>+<kdb>G</kdb>,<kdb>Ctr</kdb>+<kdb>S</kdb> (***G***it ***S***tashes): git stashes list, with diff for each file
-- <kdb>Ctrl</kdb>+<kdb>G</kdb>,<kdb>Ctr</kdb>+<kdb>H</kdb> (***G***it ***H***istory): git log, with diff for each hash
-- <kdb>Ctrl</kdb>+<kdb>G</kdb>,<kdb>Ctr</kdb>+<kdb>B</kdb> (***G***it ***B***ranches): git branches, with log for each branch
+- <kdb>Ctrl</kdb>+<kdb>E</kdb>: Show a fzf filetered view with files and directory matching search term
+
+- <kdb>Ctrl</kdb>+<kdb>X,<kdb>Ctr</kdb>+<kdb>F</kdb>: Show a fzf filtered view with files matching search term
+
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>?</kbd>: Show key bindings for fzf_git
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>F</kbd>: (***G***it ***F***iles) Use fzf for Files
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>B</kbd>: (***G***it ***B***ranches) Use fzf for Branches
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>T</kbd>: (***G***it ***T***ags) Use fzf for Tags
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>R</kbd>: (***G***it ***R***emotes) Use fzf for Remotes
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>H</kbd>: (***G***it ***H***ashes) Use fzf for commit Hashes (log)
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>S</kbd>: (***G***it ***S***tashes) Use fzf for Stashes
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>L</kbd>: (***G***it ref***L***ogs)Use fzf for reflogs
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>W</kbd>: (***G***it ***W***oktrees) Use fzf for Worktrees
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>E</kbd>: (***G***it ***E***ach ref) Use fzf for Each ref (git for-each-ref)
+- <kbd>Ctrl</kbd>+<kbd>X</kbd>,<kbd>Ctrl</kbd>+<kbd>F</kbd>: (***G***it ***C***hanges) Use fzf for Status with diff
+
+> if your terminal support it, set `CLINK_FZF_PREVIEW_SIXELS=1` for better image support
 
 ![](assets/fzf-git-branches.png)
 
