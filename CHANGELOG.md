@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.2.2](https://github.com/narnaud/clink-terminal/compare/v2.2.1...v2.2.2) (2026-03-01)
+
+
+### Other
+
+* Add CODEOWNERS ([1acb47f](https://github.com/narnaud/clink-terminal/commit/1acb47f18f52dd0b15ee73a9ee2fc989fae2ab82))
+* Fix codespell issues" ([bb6c1ce](https://github.com/narnaud/clink-terminal/commit/bb6c1ced1a1f4da072d5e4506aae53b21eff4ffc))
+* update clink-gizmos ([1643c43](https://github.com/narnaud/clink-terminal/commit/1643c430f2b6960fc3a410ff463b73f8b82ff843))
+* update pre-commit (remove json formatter) ([12ff2e5](https://github.com/narnaud/clink-terminal/commit/12ff2e589c64bce569ce0dc866c7aa44e9b227d0))
+
 ## [2.2.1](https://github.com/narnaud/clink-terminal/compare/v2.2.0...v2.2.1) (2025-11-24)
 
 
