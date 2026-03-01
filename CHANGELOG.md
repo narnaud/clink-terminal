@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.3](https://github.com/narnaud/clink-terminal/compare/v2.2.2...v2.2.3) (2026-03-01)
+
+
+### Documentation
+
+* Document new fzf filters ([9906673](https://github.com/narnaud/clink-terminal/commit/9906673dadc8ae09a111e8482d595ba7e3005973))
+
+
+### Other
+
+* Deprecate some fzf filter for the new ones in clinj-gizmos ([ceb7b17](https://github.com/narnaud/clink-terminal/commit/ceb7b17c3a0b2031928213e15a510c95a7b22582))
+* **deps:** bump 3rdparty/clink-gizmos from `6625eb7` to `4b4512c` ([52d2858](https://github.com/narnaud/clink-terminal/commit/52d28588c98edc6d3c6d62f5714ec187cad3d3f5))
+* Fix spelling ([cf5b9ee](https://github.com/narnaud/clink-terminal/commit/cf5b9eef1e6da8155e7dfcf6501f4d2c6618fb24))
+
 ## [2.2.2](https://github.com/narnaud/clink-terminal/compare/v2.2.1...v2.2.2) (2026-03-01)
 
 
