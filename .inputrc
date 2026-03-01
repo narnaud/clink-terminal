@@ -9,42 +9,38 @@ set history-point-at-end-of-anchored-search         on
 set menu-complete-wraparound                        off
 set search-ignore-case                              on
 
-# The following key bindings are for emacs mode.
+# The following key bindings are for emacs mode
+
 set keymap emacs
 
 "\e[27;8;72~":      clink-popup-show-help           # Alt-Ctrl-Shift-H
 
-# Completion key bindings.
-#"\t":               old-menu-complete               # Tab
+# Completion key bindings
+
 "\t":               clink-select-complete           # Tab
 "\e[Z":             old-menu-complete-backward      # Shift-Tab
 "\e[27;5;32~":      clink-select-complete           # Ctrl-Space
 
-# Some key bindings I got used to from 4Dos/4NT/Take Command.
+# Some key bindings I got used to from 4Dos/4NT/Take Command
+
 C-k:                add-history                     # Ctrl-K (replaces `kill-line`)
 "\e[A":             history-search-backward         # Up (replaces `previous-history`)
 "\e[B":             history-search-forward          # Down (replaces `next-history`)
 "\e[5~":            clink-popup-history             # PgUp (replaces `history-search-backward`)
 "\e[6~":                                            # PgDn (cleared because I redefined PgUp)
 
-# Some key bindings for interrogating the Readline configuration.
-"\C-x\C-f":         dump-functions                  # Ctrl-X, Ctrl-F
-"\C-x\C-m":         dump-macros                     # Ctrl-X, Ctrl-M
-"\C-x\C-v":         dump-variables                  # Ctrl-X, Ctrl-V
+# Default key bindings for fzf with Clink
 
-# Default key bindings for fzf with Clink.
 "\C-t":        "luafunc:fzf_file"           # Ctrl+T lists files recursively; choose one or multiple to insert them.
 "\C-r":        "luafunc:fzf_history"        # Ctrl+R lists history entries; choose one to insert it.
 "\M-c":        "luafunc:fzf_directory"      # Alt+C lists subdirectories; choose one to 'cd /d' to it.
 "\M-b":        "luafunc:fzf_bindings"       # Alt+B lists key bindings; choose one to invoke it.
-# Enabling this key binding will break the normal behavior of the Tab key.
-#"\t":          "luafunc:fzf_tab"            # Tab uses fzf to filter match completions, but only when preceded by '**' (recursive).
+"\t":          "luafunc:fzf_tab"            # Tab uses fzf to filter match completions, but only when preceded by '**' (recursive).
 "\e[27;5;32~": "luafunc:fzf_complete_force" # Ctrl+Space uses fzf to filter match completions (and supports '**' for recursive).
 
 "\C-e":        "luafunc:fzf_explorer"
-"\C-g\C-f":    "luafunc:fzf_git_status"
-"\C-g\C-s":    "luafunc:fzf_git_stashes"
-"\C-g\C-h":    "luafunc:fzf_git_hashes"
-"\C-g\C-b":    "luafunc:fzf_git_branches"
+
+"\C-g\C-c":    "luafunc:fzf_git_status"
+"\C-g\c":      "luafunc:fzf_git_status"
 
 $endif              # end clink-only section
