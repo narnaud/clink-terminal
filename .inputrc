@@ -18,8 +18,8 @@ set keymap emacs
 # Completion key bindings
 
 "\t":               clink-select-complete           # Tab
-"\e[Z":             old-menu-complete-backward      # Shift-Tab
-"\e[27;5;32~":      clink-select-complete           # Ctrl-Space
+# Using fzf for Ctrl-space, see below
+# "\e[27;5;32~":      clink-select-complete           # Ctrl-Space
 
 # Some key bindings I got used to from 4Dos/4NT/Take Command
 
@@ -35,12 +35,16 @@ C-k:                add-history                     # Ctrl-K (replaces `kill-lin
 "\C-r":        "luafunc:fzf_history"        # Ctrl+R lists history entries; choose one to insert it.
 "\M-c":        "luafunc:fzf_directory"      # Alt+C lists subdirectories; choose one to 'cd /d' to it.
 "\M-b":        "luafunc:fzf_bindings"       # Alt+B lists key bindings; choose one to invoke it.
-"\t":          "luafunc:fzf_tab"            # Tab uses fzf to filter match completions, but only when preceded by '**' (recursive).
+# This does not work as expected, I can't get the clink-select-complete with that
+# "\t":          "luafunc:fzf_tab"            # Tab uses fzf to filter match completions, but only when preceded by '**' (recursive).
 "\e[27;5;32~": "luafunc:fzf_complete_force" # Ctrl+Space uses fzf to filter match completions (and supports '**' for recursive).
 
 "\C-e":        "luafunc:fzf_explorer"
 
 "\C-g\C-c":    "luafunc:fzf_git_status"
 "\C-g\c":      "luafunc:fzf_git_status"
+
+# Zoxide
+"\e[5;5~":    "luafunc:zoxide_dir_popup"    # Ctrl-PgUp
 
 $endif              # end clink-only section
