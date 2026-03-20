@@ -86,7 +86,8 @@ Unix aliases:
 
 New commands:
 
-- `e`: open the Windows file explorer with the current folder
+- `o`: open a file using the default program
+  - `o` without argument open the current directory (replace previous `e`)
 - `preview`: show a preview of the file or folder passed
   - use `dirx` for a folder, and display a tree
   - use `chafa` for an image
@@ -130,7 +131,6 @@ alias: helix %USERPROFILE%\.config\alias.yaml
 - <kdb>Alt</kdb>+<kdb>C</kdb>: lists subdirectories; choose one to 'cd /d' to it,
 - <kdb>Alt</kdb>+<kdb>B</kdb>: lists key bindings; choose one to invoke it,
 - <kdb>Ctrl</kdb>+<kdb>Space</kdb>: uses fzf to filter match completions (and supports '**' for recursive)
-- <kbd>Tab</kbd>: Tab uses fzf to filter match completions, but only when preceded by '**' (recursive).
 
 ![](assets/fzf-files.png)
 
@@ -140,7 +140,7 @@ alias: helix %USERPROFILE%\.config\alias.yaml
 
 - <kdb>Ctrl</kdb>+<kdb>E</kdb>: Show a fzf filtered view with files and directory matching search term
 
-- <kdb>Ctrl</kdb>+<kdb>X,<kdb>Ctr</kdb>+<kdb>F</kdb>: Show a fzf filtered view with files matching search term
+- <kdb>Ctrl</kdb>+<kdb>X,<kdb>Ctr</kdb>+<kdb>F</kdb>: Show a fzf filtered view with file content matching search term (using `rg`)
 
 - <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>?</kbd>: Show key bindings for fzf_git
 - <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>F</kbd>: (Git Files) Use fzf for Files

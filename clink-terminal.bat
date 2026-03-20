@@ -10,7 +10,7 @@ doskey cp      = %USERPROFILE%\scoop\apps\git\current\usr\bin\cp.exe $*
 doskey mv      = %USERPROFILE%\scoop\apps\git\current\usr\bin\mv.exe $*
 doskey rm      = %USERPROFILE%\scoop\apps\git\current\usr\bin\rm.exe $*
 doskey pwd     = chdir
-doskey e       = start %windir%\explorer.exe .
+doskey o       = open.cmd $*
 
 ::: User specific aliases
 set ALIAS_FILE=%USERPROFILE%\.config\alias.yaml
