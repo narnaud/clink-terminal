@@ -88,9 +88,11 @@ New commands:
 
 - `o`: open a file using the default program
   - `o` without argument open the current directory (replace previous `e`)
-- `preview`: show a preview of the file or folder passed
+- `p`: show a preview of the file or folder passed
   - use `dirx` for a folder, and display a tree
   - use `chafa` for an image
+  - use `mdterm` (if installed) for a markdown file
+  - use `mcat` (if installed) for a pdf file
   - default to `bat` otherwise
 - `y`: run `yazi` file manager (need to be installed)
   - <kbd>Q</kdb> will exit without changing the current working directory
@@ -208,8 +210,9 @@ This won't be possible without the help of those giants:
 - [dirx](https://github.com/chrisant996/dirx)
 - [fd](https://github.com/sharkdp/fd)
 - [fzf](https://junegunn.github.io/fzf/)
-- [jq](https://jqlang.github.io/jq/)
 - [less](https://greenwoodsoftware.com/less/)
+- [mcat](https://github.com/Skardyy/mcat)
+- [mdterm](https://github.com/bahdotsh/mdterm)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [scoop](https://scoop.sh/)
 - [yq](https://mikefarah.gitbook.io/yq)

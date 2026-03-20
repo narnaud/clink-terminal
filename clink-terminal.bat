@@ -3,14 +3,15 @@
 :::============================================================================
 ::: Aliases
 :::============================================================================
-doskey ls      = dirx --icons -2 -v -h -oga -Qvsh $*
-doskey ll      = dirx --icons -a -oga -Qvsh $*
-doskey clear   = cls
-doskey cp      = %USERPROFILE%\scoop\apps\git\current\usr\bin\cp.exe $*
-doskey mv      = %USERPROFILE%\scoop\apps\git\current\usr\bin\mv.exe $*
-doskey rm      = %USERPROFILE%\scoop\apps\git\current\usr\bin\rm.exe $*
-doskey pwd     = chdir
-doskey o       = open.cmd $*
+doskey ls    = dirx --icons -2 -v -h -oga -Qvsh $*
+doskey ll    = dirx --icons -a -oga -Qvsh $*
+doskey clear = cls
+doskey cp    = %USERPROFILE%\scoop\apps\git\current\usr\bin\cp.exe $*
+doskey mv    = %USERPROFILE%\scoop\apps\git\current\usr\bin\mv.exe $*
+doskey rm    = %USERPROFILE%\scoop\apps\git\current\usr\bin\rm.exe $*
+doskey pwd   = chdir
+doskey o     = open.cmd $*
+doskey p     = preview.cmd $*
 
 ::: User specific aliases
 set ALIAS_FILE=%USERPROFILE%\.config\alias.yaml
@@ -52,6 +53,11 @@ set FZF_ICON_WIDTH=2
 
 ::: Does not work for now on Windows Terminal
 ::: set CLINK_FZF_PREVIEW_SIXELS=1
+
+:::============================================================================
+::: mdterm setup
+:::============================================================================
+set MDTERM_IMAGE_PROTOCOL=sixel
 
 :::============================================================================
 ::: Start ssh-agent

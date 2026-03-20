@@ -34,8 +34,28 @@ if x%__ARG:~1,1% == x- goto :try_file
 2>nul chafa -f sixels %__ARG%
 if not errorlevel 1 goto :end
 
-rem -- Try to preview as a text file.
 :try_file
+for %%I in ("%__ARG%") do set __EXT=%%~xI
+
+rem -- Try to preview .pdf files with mcat if available.
+if /i "%__EXT%"==".pdf" (
+    2>nul where mcat >nul 2>&1
+    if not errorlevel 1 (
+        mcat %__ARG%
+        goto :end
+    )
+)
+
+rem -- Try to preview .md files with mdterm if available.
+if /i "%__EXT%"==".md" (
+    2>nul where mdterm >nul 2>&1
+    if not errorlevel 1 (
+        mdterm %__ARG%
+        goto :end
+    )
+)
+
+rem -- Try to preview as a text file.
 bat -f -p -- %__ARG%
 
 :end
