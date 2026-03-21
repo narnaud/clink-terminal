@@ -41,8 +41,8 @@ C-k:                add-history                     # Ctrl-K (replaces `kill-lin
 
 "\C-e":        "luafunc:fzf_explorer"
 
-"\C-g\C-c":    "luafunc:fzf_git_status"
-"\C-g\c":      "luafunc:fzf_git_status"
+"\C-g\C-c":    "luafunc:fzf_git_files"
+"\C-g\c":      "luafunc:fzf_git_files"
 
 # Zoxide
 "\e[5;5~":    "luafunc:zoxide_dir_popup"    # Ctrl-PgUp

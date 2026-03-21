@@ -146,7 +146,7 @@ alias: helix %USERPROFILE%\.config\alias.yaml
 - <kbd>Ctrl</kbd>+<kbd>X,<kbd>Ctr</kbd>+<kbd>F</kbd>: Show a fzf filtered view with file content matching search term (using `rg`)
 
 - <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>?</kbd>: Show key bindings for fzf_git
-- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>F</kbd>: (Git Files) Use fzf for Files
+- <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>F</kbd>: (Git Files) Use fzf for Files (show status too)
 - <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>B</kbd>: (Git Branches) Use fzf for Branches
 - <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>T</kbd>: (Git Tags) Use fzf for Tags
 - <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>R</kbd>: (Git Remotes) Use fzf for Remotes
@@ -155,7 +155,6 @@ alias: helix %USERPROFILE%\.config\alias.yaml
 - <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>L</kbd>: (Git refLogs)Use fzf for refLogs
 - <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>W</kbd>: (Git Worktrees) Use fzf for Worktrees
 - <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>E</kbd>: (Git Each ref) Use fzf for Each ref (git for-each-ref)
-- <kbd>Ctrl</kbd>+<kbd>X</kbd>,<kbd>Ctrl</kbd>+<kbd>C</kbd>: (Git Changes) Use fzf for local Changes with diff
 
 > if your terminal support it, set `CLINK_FZF_PREVIEW_SIXELS=1` for better image support
 
