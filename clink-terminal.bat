@@ -12,6 +12,7 @@ doskey rm    = %USERPROFILE%\scoop\apps\git\current\usr\bin\rm.exe $*
 doskey pwd   = chdir
 doskey o     = open.cmd $*
 doskey p     = preview.cmd $*
+doskey cpcp  = cpclip.cmd $*
 
 ::: User specific aliases
 set ALIAS_FILE=%USERPROFILE%\.config\alias.yaml

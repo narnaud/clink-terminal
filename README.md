@@ -94,8 +94,9 @@ New commands:
   - use `mdterm` (if installed) for a markdown file
   - use `mcat` (if installed) for a pdf file
   - default to `bat` otherwise
+- `cpcp`: copy a file or a folder to theWindows clipboard
 - `y`: run `yazi` file manager (need to be installed)
-  - <kbd>Q</kdb> will exit without changing the current working directory
+  - <kbd>Q</kbd> will exit without changing the current working directory
   - <kbd>shift</kbd>-<kbd>Q</kbd> will exit and change the current working directory
 
 ### Custom aliases
@@ -128,11 +129,11 @@ alias: helix %USERPROFILE%\.config\alias.yaml
 
 `fzf` is integrated all the way into this current terminal configuration. The *default* shortcuts are:
 
-- <kdb>Ctrl</kdb>+<kdb>T</kdb>: lists files recursively; choose one or multiple to insert them,
-- <kdb>Ctrl</kdb>+<kdb>R</kdb>: lists history entries; choose one to insert it,
-- <kdb>Alt</kdb>+<kdb>C</kdb>: lists subdirectories; choose one to 'cd /d' to it,
-- <kdb>Alt</kdb>+<kdb>B</kdb>: lists key bindings; choose one to invoke it,
-- <kdb>Ctrl</kdb>+<kdb>Space</kdb>: uses fzf to filter match completions (and supports '**' for recursive)
+- <kbd>Ctrl</kbd>+<kbd>T</kbd>: lists files recursively; choose one or multiple to insert them,
+- <kbd>Ctrl</kbd>+<kbd>R</kbd>: lists history entries; choose one to insert it,
+- <kbd>Alt</kbd>+<kbd>C</kbd>: lists subdirectories; choose one to 'cd /d' to it,
+- <kbd>Alt</kbd>+<kbd>B</kbd>: lists key bindings; choose one to invoke it,
+- <kbd>Ctrl</kbd>+<kbd>Space</kbd>: uses fzf to filter match completions (and supports '**' for recursive)
 
 ![](assets/fzf-files.png)
 
@@ -140,9 +141,9 @@ alias: helix %USERPROFILE%\.config\alias.yaml
 
 `clink-terminal` also comes with more advanced views (`Ctrl+\` will change the preview position or hide it):
 
-- <kdb>Ctrl</kdb>+<kdb>E</kdb>: Show a fzf filtered view with files and directory matching search term
+- <kbd>Ctrl</kbd>+<kbd>E</kbd>: Show a fzf filtered view with files and directory matching search term
 
-- <kdb>Ctrl</kdb>+<kdb>X,<kdb>Ctr</kdb>+<kdb>F</kdb>: Show a fzf filtered view with file content matching search term (using `rg`)
+- <kbd>Ctrl</kbd>+<kbd>X,<kbd>Ctr</kbd>+<kbd>F</kbd>: Show a fzf filtered view with file content matching search term (using `rg`)
 
 - <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>?</kbd>: Show key bindings for fzf_git
 - <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>F</kbd>: (Git Files) Use fzf for Files
