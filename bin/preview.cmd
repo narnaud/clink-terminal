@@ -31,7 +31,9 @@ rem --------------------------------------------------------------------------
 rem -- Try to preview as an image.
 rem    NOTE: Unfortunately chafa does not support the usual -- syntax to end flags.
 if x%__ARG:~1,1% == x- goto :try_file
-2>nul chafa -f sixels %__ARG%
+set __CHAFA_OPTS=
+if not x%CLINK_FZF_PREVIEW_SIXELS% == x set __CHAFA_OPTS=-f sixels
+2>nul chafa %__CHAFA_OPTS% %__ARG%
 if not errorlevel 1 goto :end
 
 :try_file

@@ -53,7 +53,7 @@ set FZF_ALT_C_COMMAND=dirx.exe /b /s /X:d /a:d-s-h --bare-relative --icons=alway
 set FZF_ICON_WIDTH=2
 
 ::: Does not work for now on Windows Terminal
-::: set CLINK_FZF_PREVIEW_SIXELS=1
+set CLINK_FZF_PREVIEW_SIXELS=1
 
 :::============================================================================
 ::: mdterm setup

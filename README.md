@@ -141,8 +141,6 @@ alias: helix %USERPROFILE%\.config\alias.yaml
 
 `clink-terminal` also comes with more advanced views (`Ctrl+\` will change the preview position or hide it):
 
-- <kbd>Ctrl</kbd>+<kbd>E</kbd>: Show a fzf filtered view with files and directory matching search term
-
 - <kbd>Ctrl</kbd>+<kbd>X,<kbd>Ctr</kbd>+<kbd>F</kbd>: Show a fzf filtered view with file content matching search term (using `rg`)
 
 - <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>?</kbd>: Show key bindings for fzf_git
@@ -155,8 +153,6 @@ alias: helix %USERPROFILE%\.config\alias.yaml
 - <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>L</kbd>: (Git refLogs)Use fzf for refLogs
 - <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>W</kbd>: (Git Worktrees) Use fzf for Worktrees
 - <kbd>Ctrl</kbd>+<kbd>G</kbd>,<kbd>Ctrl</kbd>+<kbd>E</kbd>: (Git Each ref) Use fzf for Each ref (git for-each-ref)
-
-> if your terminal support it, set `CLINK_FZF_PREVIEW_SIXELS=1` for better image support
 
 ![](assets/fzf-git-branches.png)
 
