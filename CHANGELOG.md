@@ -1,5 +1,33 @@
 # Changelog
 
+## [3.0.0](https://github.com/narnaud/clink-terminal/compare/v2.2.3...v3.0.0) (2026-03-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* the explorer is now removed. Use a real file manager like yazi.
+* Some feature in git integration are lost, like dropping a branch or staging files - use lazygit for that.
+* `e` has been replaced with `o` without any params (leaving `e` for another alias, like edit)
+
+### Features ✨
+
+* `o` to open any file or current directory ([ddeb7c0](https://github.com/narnaud/clink-terminal/commit/ddeb7c0a408910aeef4453497152b3ef9cd4b332))
+* add `cpcp` to copy a file to the clipboard ([9ccbdbb](https://github.com/narnaud/clink-terminal/commit/9ccbdbbb5e2e0826d2ef9cd7a267edae0162c2bb))
+* improve cd command ([7d18185](https://github.com/narnaud/clink-terminal/commit/7d181858104e85fab47df9c9d3a0577703ba84f2))
+* improve preview, add `p` alias ([e5ad552](https://github.com/narnaud/clink-terminal/commit/e5ad55202391319636aec6cbb44b2da350562a5b))
+* remove fzf-explorer ([1aafa5c](https://github.com/narnaud/clink-terminal/commit/1aafa5c22abb55d9038d48a56333fba7296459d9))
+* use clink-gizmos fzf-git commands ([4a50cd9](https://github.com/narnaud/clink-terminal/commit/4a50cd991b16eaf26c456bfc39c3b17b0cce5e1d))
+
+
+### Bug Fixes 🐞
+
+* fix completion with tab ([ec58262](https://github.com/narnaud/clink-terminal/commit/ec58262a35d34d89f746598fb2ae813bd1103dc6))
+
+
+### Other
+
+* update clink-gizmos ([f4c9038](https://github.com/narnaud/clink-terminal/commit/f4c9038b20fa9afe52b8539847d7db72c010e548))
+
 ## [2.2.3](https://github.com/narnaud/clink-terminal/compare/v2.2.2...v2.2.3) (2026-03-01)
 
 
