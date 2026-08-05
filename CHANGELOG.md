@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.2](https://github.com/narnaud/clink-terminal/compare/v3.0.1...v3.0.2) (2026-08-05)
+
+
+### Other
+
+* **deps:** bump 3rdparty/clink-gizmos from `985f131` to `3d79bc5` ([444d292](https://github.com/narnaud/clink-terminal/commit/444d292ef2a956346f37fb3b6a24ff47d78470cc))
+* **deps:** bump 3rdparty/clink-gizmos from `ce5a646` to `985f131` ([79da542](https://github.com/narnaud/clink-terminal/commit/79da5422abff8194b6677ca85d4fa8cf4bd8e2e0))
+
 ## [3.0.1](https://github.com/narnaud/clink-terminal/compare/v3.0.0...v3.0.1) (2026-06-21)
 
 
